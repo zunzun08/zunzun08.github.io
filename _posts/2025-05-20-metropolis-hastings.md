@@ -1,5 +1,5 @@
 ---
-title: "Metropolis-Hastings Algorithm Explained"
+title: "Metropolis-Hastings Algorithm"
 layout: post
 permalink: /metropolis-hastings  # Custom URL (optional)
 ---
