@@ -1,3 +1,8 @@
+---
+title: "Metropolis-Hastings Algorithm Explained"
+layout: post
+permalink: /metropolis-hastings  # Custom URL (optional)
+---
 # The Metropolis Hastings Algorithm
 
 **Introduction:**
