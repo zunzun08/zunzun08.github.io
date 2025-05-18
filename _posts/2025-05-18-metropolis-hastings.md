@@ -1,7 +1,6 @@
 ---
 title: "Metropolis-Hastings Algorithm"
 layout: post
-permalink: /metropolis-hastings  # Custom URL (optional)
 ---
 # The Metropolis Hastings Algorithm
 
