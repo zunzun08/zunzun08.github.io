@@ -1,4 +1,9 @@
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-redirect-from
+
+# Minima settings
+minima:
+  skin: auto # light/dark/auto
+  social_links:
+    github: zunzun08
