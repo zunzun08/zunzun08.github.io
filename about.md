@@ -11,9 +11,8 @@ title: About
         </p>
         
         <p>
-            In Austin, I discovered my passion for mathematics during my first Calculus course. I became obsessed with learning as much math as possible in the limited time available. After a few semesters, I gravitated toward statistics, accumulating knowledge that I'm excited to share through this platform.
+            I discovered my passion for mathematics during my first Calculus course here at UT where I originally came in as an Economics major. After my first Calculus class, I became obsessed with learning as much math as possible during my time as an undergrad. Eventually adding a Math major under my belt with the hopes of becoming a data scientist. After a few semesters I realized I had accumulated all this knowledge and had no where to put it! That's why I'm excited to share what I've learned through this platform.
         </p>
-        
         <p>
             Join me as I explore statistical tools and their applications to real-world relationships.
         </p>
