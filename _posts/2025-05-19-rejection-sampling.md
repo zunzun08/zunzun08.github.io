@@ -62,7 +62,7 @@ def rejection_sampling(num_samples, M, prop_dist, target_dist):
 
 ## Example:
 Here we use \(p \s\)m \text{Exp}(\lambda = \frac{1}{2})$ to target a standard exponential distribution:
-![Alt Text](Animations/rejection_sampling_example.png)
+![Image](assets/rejection_sampling_example.png)
 
 ## Proof of Rejection Sampling
 Our goal is to show once we follow the rejection sample algorithm, the random variable we drew $X \sim q(x)\). Probability theory tells us that if  $X \sim q(x)\), the following are equivalent:
@@ -131,7 +131,7 @@ $$
 \Pr(X \in A | Z=1) = \frac{\frac{1}{M} \Pr(X \in A)}{\frac{1}{M}} = \Pr(X \in A) = Q(x)
 $$
 
-Therefore, given we accept the random variable we sampled, We can say $X \sim q(x)\)
+Therefore, given we accept the random variable we sampled, We can say $X \sim q(x) \)
 
 
 
