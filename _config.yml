@@ -7,4 +7,4 @@ minima:
   skin: auto # light/dark/auto
   social_links:
     github: zunzun08
-footer_content: false  # Disables Minima's default footer
+  footer_content: false  # Disables Minima's default footer
