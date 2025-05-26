@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang=" en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Metropolis Hastings | zunzun08.github.io</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Metropolis Hastings" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;!– title: “Metropolis-Hastings Algorithm” layout: post —" />
+<meta property="og:description" content="&lt;!– title: “Metropolis-Hastings Algorithm” layout: post —" />
+<link rel="canonical" href="http://localhost:4000/zunzun08.github.io/2025/05/18/metropolis-hastings.html" />
+<meta property="og:url" content="http://localhost:4000/zunzun08.github.io/2025/05/18/metropolis-hastings.html" />
+<meta property="og:site_name" content="zunzun08.github.io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-18T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Metropolis Hastings" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-18T00:00:00-05:00","datePublished":"2025-05-18T00:00:00-05:00","description":"&lt;!– title: “Metropolis-Hastings Algorithm” layout: post —","headline":"Metropolis Hastings","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/zunzun08.github.io/2025/05/18/metropolis-hastings.html"},"url":"http://localhost:4000/zunzun08.github.io/2025/05/18/metropolis-hastings.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/zunzun08.github.io/%20/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/zunzun08.github.io/feed.xml" title="zunzun08.github.io" /></head>
+
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/zunzun08.github.io/">zunzun08.github.io</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Metropolis Hastings</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-05-18T00:00:00-05:00" itemprop="datePublished">May 18, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+---
+title: "Metropolis-Hastings Algorithm"
+layout: post
+---
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['\\(','\\)'], ['$', '$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+
+<h1 id="the-metropolis-hastings-algorithm">The Metropolis Hastings Algorithm</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) method that allows us to generate samples from a target distribution. A target distribution is a function whose form is known but whose constant of proportionality is unknown and/or cannot be calculated through traditional methods or numerical methods. Because the constant of proportionality cannot be calculated, traditional methods of sampling such as the inverse CDF method cannot be applied. We’ll assume the rejection sampling method does not work here for our proposal and target distributions. Instead, we turn to the Metropolis Hastings algorithm which works by also works by an iterative process. The Metropolis Hastings algorithm draws samples from a proposal probability density function and based on an overlap measure, the sample is accepted or rejected. After some number of iterations, the samples accepted by MH algorithm follow target distribution, without ever calculating the constant of integration.</p>
+
+<h3 id="example">Example</h3>
+<p>Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution that is easy to sample from and $q(x)$ is difficult to sample from. By applying the MH Algorithm 10,000 times, and only sampling from $p(x)$, we can achieve the following result:</p>
+
+<p><img src="/assets/metropolis-hastings-animation.mp4" alt="MH Example Video" /></p>
+
+<p>Effectively, samples from $p(x)$ and concluding that they are accepted as approximations of $q(x)$.</p>
+
+<h2 id="mathematical-background">Mathematical Background</h2>
+<p>Before formally defining the Metropolis Hastings, I’d like to recall or introduce a few concepts the reader should be familiar with to understand the proof of the Metropolis-Hastings Algorithm.</p>
+
+<h3 id="monte-carlo">Monte Carlo</h3>
+<p>Monte Carlo methods are a class of computational techniques that use random sampling to approximate mathematical quantities, such as integrals. These methods are useful when analytical solutions are difficult or impossible to obtain.</p>
+
+<p>Given a probability density function $f(x)$ and independently and identically distributed (i.i.d) samples $x_1, x_2, …, x_n$ from $f(x)$, we can approximate the integral of a continuous function $a(x)$ with respect to $f(x)$:</p>
+
+\[I = \int a(x)f(x)\text{d}x\]
+
+<p>With the following estimation:</p>
+
+\[\hat{I} = \frac{1}{n} \sum_{i=1}^{n} a(x_i)\]
+
+<p>Where $\hat{I}$ is an unbiased estimator of $I$. By the law of large numbers $\hat{I} \rightarrow I$ and $\text{E}[\hat{I}] = I$</p>
+
+<p><strong>Proof:</strong></p>
+
+<p>It should be noted that by the Law of the Unconscious Statistician:</p>
+
+\[I = \int a(x)f(x)dx = \text{E}[a(x)]\]
+
+<p>By properties of expected value we apply the following:</p>
+
+\[\text{E}[\hat{I}] = \text{E}[\frac{1}{n} \sum_{i=1}^n a(x_i)] = \frac{1}{n} \sum_{i=1}^n \text{E}[a(x_i)]\]
+
+<p>Since $x_1, x_2, …, x_n$ are i.i.d</p>
+
+\[\text{E}[\hat{I}] = \frac{1}{n} (nI) = I = \text{E}[a(x)]\]
+
+<p><strong>QED</strong></p>
+
+<p>We can also show that as the number of samples increase, our estimate approaches the true value.
+\begin{proof}</p>
+
+\[\text{Var}[\hat{I}] = \text{Var}[\frac{1}{n} \sum_{i=1}^na(x_i)] = \frac{1}{n^2}\sum_i \text{Var}[a(x_i)]\]
+
+<p>Since our samples are i.i.d:</p>
+
+\[=\frac{1}{n^2}(n\text{Var}[a(x_i)]) = \frac{1}{n}\text{Var}[a(x_i)]\]
+
+<p>Now applying the limit:</p>
+
+<p>\(\lim_{n \rightarrow \infty} \frac{1}{n}\text{Var}[a(x_i)] = 0\)
+\end{proof}
+\subsubsection{Markov Chain}</p>
+
+<p>A Markov chain is a stochastic process where the future state depends only on the current state and not on the sequence of events that preceded it. A key concept in Markov chains is the <strong>stationary distribution</strong>, which is a probability distribution that remains unchanged as the chain evolves over time.</p>
+
+<p>The MC Stationary property requires the following:</p>
+<ol>
+  <li>A p.d.f: $f(x)$</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>An i.i.d sample $x_1, x_2, …, x_n$ drawn from $\Pr(\cdot</td>
+          <td>x_{i-1})$, the transition kernel from the previous state, $x_{i-1}$.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>The stationary distribution must satisfy the following process:</li>
+</ol>
+
+\[f(y) = \int \Pr(y | x) f(x) \text{dx}\]
+
+<p>If all three conditions are met then the following is true:
+If the initial state $<code class="language-plaintext highlighter-rouge">x_1</code>$,​ is drawn from the stationary distribution $<code class="language-plaintext highlighter-rouge">f(x)</code>$, and each subsequent state $<code class="language-plaintext highlighter-rouge">x_{i+1}</code>$ is drawn from $<code class="language-plaintext highlighter-rouge">\Pr⁡(⋅∣x_i)</code>$, then all states $<code class="language-plaintext highlighter-rouge">x_i</code>$ will also follow the stationary distribution $<code class="language-plaintext highlighter-rouge">f(x)</code>$.</p>
+
+<p>\subsubsection{Markov Chain Monte Carlo}</p>
+
+<p>Markov Chain Monte Carlo (MCMC) methods combine Monte Carlo sampling with Markov chains to generate samples from a target probability distribution $<code class="language-plaintext highlighter-rouge">f(x)</code>$.</p>
+
+<p>Given a sequence of samples $x_1,x_2,…,x_n$ generated by an ergodic Markov chain with stationary distribution $<code class="language-plaintext highlighter-rouge">f(x)</code>$, we can approximate expectations of a function $<code class="language-plaintext highlighter-rouge">a(x)</code>$ as follows:</p>
+
+\[\mathbb{E}_f[a(x)] \approx \frac{1}{n} \sum_{i=1}^n a(x_i)\]
+
+<p>This approximation holds under the condition that the Markov chain will eventually produce samples that are distributed according to $<code class="language-plaintext highlighter-rouge">f(x)</code>$, even if the samples are not independent.</p>
+
+<p>By the definition above and the description above, the MH algorithm is an MCMC method.</p>
+
+<p>\subsection{Metropolis-Hastings Algorithm}
+\begin{enumerate}
+\item Pick $p(x)$ and $q(x)$ where $p(x)$ is a distribution that can be easily sampled from.
+\item Set an initial value of $x$ (could be anything, keep it reasonable)
+\item Take $x’$ from $p(x)$
+\item Evaluate $q(x’)$
+\item Compute 
+$\alpha(x’, x) = \min(1, \frac{p(x’)q(x|x’)}{p(x)q(x’|x)})$</p>
+
+<p>\item Draw a random sample $u$ from $\text{Uniform}[0,1]$
+\item Accept or reject: 
+   If $u &lt; \alpha(x’,x)$:
+	$x_2 = x’$
+	,else:
+		$x_2 = x_1$
+\end{enumerate}</p>
+
+<p>\newpage
+\subsection{Proof of Metropolis Hastings Algorithm}
+From the algorithm we know applying the MH Algorithm does the following:</p>
+
+<p>\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{metropolis Movement.png}
+    \caption{Metropolis Hastings Steps}
+    \label{fig:MH movement}
+\end{figure}</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>This implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\text{Pr}(X_{i+1}</td>
+      <td>X_i)$ that facilitates the movement of random variables.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We also wish to prove $q(X_{i+1}) = \int \Pr(X_{i+1} | X_{i}) q(X_{i}) dX_{i}$ which is the stationary condition for our target distribution.
+However, we first need to find $\Pr(x_{n+1} | x_n)$ is before we can show the stationary condition holds.
+<br />
+Finding $\Pr(X_{n+1} | X_n)$:
+$X_{n+1}$ can take on two values. Either $X_{n+1}$ takes on the values of $x’$ with some probability w(x) or the sample is rejected in which case $X_{n+1} = x_n$. 
+We can represent this as:</p>
+
+\[X_{n+1} = \begin{cases}
+x' \text{ determined by w(x)} \\
+x_n \text{ 1- w(x)}
+\end{cases}\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>Since we are looking to determine $\Pr(X_{n+1}</td>
+      <td>X_n)$, using the Law of Total Probability, we get:</td>
+    </tr>
+  </tbody>
+</table>
+
+\[\Pr(X_{n+1} | X_n) = \text{Pr}(X_{n+1} = x' | X_{n} = x_{n} ) + (1- \text{Pr}(X_{n+1} = x' | X_{n} = x_{n} )) \cdot 1(X_{n+1} = X_n)\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>Where $1(X_{n+1} = X_n)$ is an indicator variable that tells us our sample was rejected. Let’s take  $\Pr(X_{n+1} = x’</td>
+      <td>X_{n} = x_n)$, the probability we move from one state to the next apart and quantify the result.</td>
+    </tr>
+  </tbody>
+</table>
+
+\[\Pr(X_{n+1} = x' | X_{n} = x_n) = \Pr(X' | X_n = x_n) \cdot \Pr(U \leq \alpha(x', x_n) | X' = x', X_n =x_n) =q(x' | x_n) \alpha(x', x_n)\]
+
+<p>Since our outcomes are binary, $X_{n+1}$ either takes on $x’$ or $X_n$, we can directly construct our density function:</p>
+
+\[\text{Pr}(X_{n+1} | X_{n}) = w(x)f(x_{n+1} | x_n) + (1-w(x))1(X_{n+1} = X_n)\]
+
+<p>where $w(x)$ is:</p>
+
+\[w(x_n) = \int q(x_{n+1} | x_n) \alpha(x_{n+1}, x_n)dx_{n+1}\]
+
+<table>
+  <tbody>
+    <tr>
+      <td>and $f(x_{n+1}</td>
+      <td>x_n)$ is:</td>
+    </tr>
+  </tbody>
+</table>
+
+\[f(x_{n+1} | x_n) = \frac{q(x_{n+1} | x_n) \alpha(x_{n+1}, x_n)}{\int q(x_{n+1}|x_n)\alpha(x_{n+1} , x_n) dx_{n+1}
+}\]
+
+<p>We’ll now show the transition distribution satisfies the stationary distribution. 
+We’d like to show the density kernel we just constructed converges to the target distribution:</p>
+
+\[q(X_{n+1}) = \int \Pr(X_{n+1} | X_n)q(X_n)dX_{_n}\]
+
+<p>Here we assume our density is ergodic where detailed balance is a sufficient condition to show there exists a stationary distribution.
+Detailed Balance tells us the rate of transition given we start at $x’$ and move to $x_n$ must be equal to the rate of transition given we start at $x_n$ and move to $x’$. For the Metropolis Hastings, this looks like:</p>
+
+\[q(x')\Pr(X_{n+1} = x'| X_n = x_n) = q(x_n)\Pr(X_{n+1} = x_n | X_{n} = x')\]
+
+<p>Claim: The Metropolis Hastings algorithm satisfies detailed balance.
+From the previous section we know the probability of transition is:</p>
+
+\[\Pr(X_{n+1} = x'| X_n = x_n) = p(x'|x_n)\alpha(x',x_n) =p(x'|x_n) \min \{ 1, \frac{q(x')p(x_n|x')}{q(x_n)p(x'|x_n)} \}\]
+
+<p>We can expand the RHS further:</p>
+
+\[=\min\{p(x'|x_n), \frac{q(x')p(x_n|x')}{q(x_n)}\}\]
+
+<p>If we multiply both sides by $q(x_n)$, we get:</p>
+
+\[\Pr(x'|x_n)q(x_n)= \min ( q(x_n)p(x'|x_n),q(x')p(x_n|x'))\]
+
+\[\Rightarrow \Pr(x'|x_n)q(x_n) = \Pr(x_n|x')q(x')\]
+
+<p>Thus, the Metropolis Hastings Algorithm satisfies detailed balance.
+We can integrate both sides w.r.t $x_n$ and find:
+\(q(x') = \int \Pr(x' |x_n)q(x_n)dx_n\)
+\(\Rightarrow
+q(x_{n+1}) = \int \Pr(x_{n+1} |x_n)q(x_n)dx_n\)</p>
+
+
+  </div><a class="u-url" href="/zunzun08.github.io/2025/05/18/metropolis-hastings.html" hidden></a>
+</article>
+
+        </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/zunzun08.github.io/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">zunzun08.github.io</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">zunzun08.github.io</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

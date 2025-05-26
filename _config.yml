@@ -1,7 +1,7 @@
 theme: minima
 plugins:
   - jekyll-feed
-baseurl: "/zunzun08.github.io"
+baseurl: "/zunzun08.github.io/zunzun08.github.io"
 
 # Minima settings
 minima:
