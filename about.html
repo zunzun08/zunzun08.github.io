@@ -4,80 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
     <style>
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 40px;
-            align-items: start;
-            background: linear-gradient(to bottom right, #f8f9fa 0%, #ffffff 100%);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 2rem 0;
-        }
-
-        .profile-img {
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            width: 100%;
-            height: auto;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.03);
-        }
-
-        .text-content {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.7;
-            color: #333;
-        }
-
-
-        .contact-section {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            margin-top: 40px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 20px;
+        /* Basic Reset */
+        * {
+            margin: 0;
             padding: 0;
-            margin: 20px 0 0;
+            box-sizing: border-box;
         }
 
-        .contact-links a {
-            padding: 10px 20px;
-            background: #3498db;
-            color: white !important;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .contact-links a:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .content-wrapper {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .profile-img {
-                order: -1;
-                max-width: 60%;
-                margin: 0 auto;
-            }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
 
         /* Header/Navigation */
@@ -103,31 +43,122 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        /* Main Content Styles */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: start;
+            background: linear-gradient(to bottom right, #f8f9fa 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .profile-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: auto;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+
+        .text-content {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .text-content p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 20px 0 0;
+            list-style: none;
+        }
+
+        .contact-links a {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white !important;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-links a:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #2c3e50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .profile-img {
+                order: -1;
+                max-width: 60%;
+                margin: 0 auto;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
-<!-- Header with navigation-->
-<!-- Header with Navigation -->
-<header>
-    <h1></h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="portfolio.html">Portfolio</a>
-            <li><a href="about.html">About</a></li>
-
-        </ul>
-    </nav>
-</header>
-
-
-
-
 <body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="content-wrapper">
         <div class="text-content">
             <p>Hi!
@@ -149,26 +180,27 @@
             </p>
         </div>
 
-        <img src="assets/me.jpg" alt="Cristian Compean" width="300" class="profile-img" loading="lazy">
+        <img src="assets/me.jpg" alt="Profile photo" width="300" class="profile-img" loading="lazy">
     </div>
 
-
     <section class="contact-section">
-
         <h2>Contact</h2>
         <ul class="contact-links">
-            <a href="https://linkedin.com/in/cristianzcompean" target="_blank" rel="noopener">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-
-            <a href="https://github.com/zunzun08" target="_blank" rel="noopener">
-                <i class="fab fa-github fa-2x"></i>
-            </a>
-            <a href="mailto:czcompean@utexas.edu">
-                <i class="fa-solid fa-envelope fa-2x"></i>
-            </a>
+            <li><a href="https://linkedin.com/in/" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a></li>
+            <li><a href="https://github.com/" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> GitHub
+                </a></li>
+            <li><a href="mailto:your-email@utexas.edu">
+                    <i class="fa-solid fa-envelope"></i> Email
+                </a></li>
         </ul>
     </section>
+
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

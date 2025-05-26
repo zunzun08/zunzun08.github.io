@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cristian Compean | Home</title>
+    <title>| Home</title>
     <style>
         /* Basic Reset */
         * {
@@ -20,11 +20,11 @@
             background-color: #f9f9f9;
         }
 
-        /* Header/Navigation */
+        /* Header/Hero Combined Section */
         header {
-            background: #2c3e50;
+            background: linear-gradient(to bottom, #2c3e50, #3498db);
             color: white;
-            padding: 1rem 0;
+            padding: 2rem 0 7rem 0;
             text-align: center;
         }
 
@@ -32,6 +32,7 @@
             display: flex;
             justify-content: center;
             list-style: none;
+            margin-bottom: 2rem;
         }
 
         nav ul li {
@@ -42,14 +43,36 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: opacity 0.3s;
         }
 
-        /* Hero Section */
-        .hero {
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
             text-align: center;
-            padding: 4rem 2rem;
-            background: #3498db;
+        }
+
+        .hero-links {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero-links a {
             color: white;
+            text-decoration: none;
+            transition: transform .3s;
+            display: inline-block;
+        }
+
+        .hero-links a:hover {
+            transform: translateY(-3px);
         }
 
         /* Main Content */
@@ -70,57 +93,69 @@
             width: 100%;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Header with Navigation -->
+    <!-- Combined Header/Hero Section -->
     <header>
-        <h1></h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a>
-                <Li><a href="blog.html">Blog</a>
             </ul>
         </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Hi, my name is Cristian Compean.</h2>
-        <p>I am a 2025 graduate of The University of Texas at Austin with a double major in Economics and Mathematics.
-            This is my personal website where I talk about my interest in Bayesian statistics,
-            machine learning, and their applications across various industries.
-        </p>
-    </section>
+        <div class="hero-content">
+            <h1>Hi, my name is Cristian Compean</h1>
+            <p>I am a 2025 graduate of The University of Texas at Austin with a double major in Economics and
+                Mathematics.
+                This is my personal website where I talk about my interest in Bayesian statistics,
+                machine learning, and their applications across various industries.
+            </p>
+
+            <div class="hero-links">
+                <a href="https://linkedin.com/in/cristianzcompean">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+
+                <a href="https://github.com/zunzun08">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+
+                <a href="mailto:czompean@utexas.edu">
+                    <i class="fa-solid fa-envelope fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <div class="container">
-        <h1> Blog <h2>
-                <h2>Sampling and Simulation</h2>
-                <p> A detailed look into different sampling algorithms designed to build intuition over the idea of
-                    distributional similarity.
-                    The measure of distributional similarity that's built up to in this deep dive is the Overlap
-                    measure. The overlap measure tells us given
-                    two individuals drawn from distinct distributions, how likely is it that we can replace one with the
-                    other? The order in which we arrive at these ideas is
-                    sequential and we observe that regardless of its complexity, sampling algorithms have to use some
-                    measure of distributional similarity to work.
-                </p>
-                <br>
-                <ul>
-                    <li><a href="/2025/05/19/rejection-sampling.md">Rejection Sampling Algorithm</a></li>
-
-                    <li><a href="/2025/05/18/metropolis-hastings">Metropolis-Hastings
-                            Algorithm</a></li>
-                    <li><a href="/2025/05/19/rejection-sampling">Overlap</a>
-                </ul>
+        <h1> Blog </h1>
+        <h2>Sampling and Simulation</h2>
+        <p> A detailed look into different sampling algorithms designed to build intuition over the idea of
+            distributional similarity.
+            The measure of distributional similarity that's built up to in this deep dive is the Overlap
+            measure. The overlap measure tells us given
+            two individuals drawn from distinct distributions, how likely is it that we can replace one with the
+            other? The order in which we arrive at these ideas is
+            sequential and we observe that regardless of its complexity, sampling algorithms have to use some
+            measure of distributional similarity to work.
+        </p>
+        <br>
+        <ul>
+            <li><a href="/2025/05/19/rejection-sampling.md">Rejection Sampling Algorithm</a></li>
+            <li><a href="/2025/05/18/metropolis-hastings">Metropolis-Hastings Algorithm</a></li>
+            <li><a href="/2025/05/19/rejection-sampling">Overlap</a></li>
+        </ul>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Cristian Compean. All rights reserved.</p>
+        <p>&copy; 2024 All rights reserved.</p>
     </footer>
 </body>
 
