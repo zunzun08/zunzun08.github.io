@@ -18,8 +18,10 @@ $$M = \sup_{x \in \Omega} \frac{q(x)}{p(x)} < \infty$$
 
 We note that $M \geq 1$:
 <br>
-**Proof:**
-<br>
+
+### **Proof:**
+
+
 Suppose $ M < 1 $.
 
 Since $M$ is the supremum of $\frac{q(x)}{p(x)}$, then for all $x$:
@@ -39,6 +41,7 @@ $$
 
 which contradicts the assumption $ M < 1 $. 
 
+**QED**
 
 
 
@@ -89,7 +92,7 @@ def rejection_sampling(num_samples, M, prop_dist, target_dist):
 ### Example
 Here we use $p \sim \text{Exp}(\lambda = \frac{1}{2})$ to target a standard exponential distribution:
 
-![RS Exp Example](/assets/rejection_sampling_example.png)
+<img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" width="400"/>
 
 ### Proof of Rejection Sampling
 Our goal is to show that if we follow the rejection sample algorithm, the random variable we drew $X$ from $p(x)$, can be said $X \sim q(x)$. Probability theory tells us that if  $X \sim q(x)$, the following are equivalent:
