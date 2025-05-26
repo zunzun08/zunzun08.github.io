@@ -11,4 +11,4 @@ minima:
 
 markdown: kramdown
 highlighter: rouge
-theme: minima # or "dark", "solarized", etc.
+theme: jekyll-theme-minimal # or "dark", "solarized", etc.
