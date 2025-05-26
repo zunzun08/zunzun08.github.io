@@ -18,8 +18,8 @@ title: About
         </p>
     </div>
     
-    <img src="{{ '/assets/me.jpg' | relative_url }}" alt="Cristian Zuniga" width="300" class="profile-img" loading="lazy">
-</div>
+c="{{ '/assets/me.jpg' | relative_url }}" alt="Cristian Zuniga" width="300" class="profile-img" loading="lazy">
+</div>    <img sr
 
 <section class="contact-section">
     <h2>Contact</h2>
