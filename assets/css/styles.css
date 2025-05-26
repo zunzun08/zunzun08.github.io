@@ -1,0 +1,25 @@
+.post-theme {
+    &--dark {
+        background: #2c3e50;
+        color: #ecf0f1;
+
+        a {
+            color: #3498db;
+        }
+    }
+
+    &--light {
+        background: #f9f9f9;
+        color: #333;
+
+        a {
+            color: #2980b9;
+        }
+    }
+
+    &--academic {
+        font-family: "Georgia", serif;
+        background: #fffdf8;
+        border-left: 4px solid #8e44ad;
+    }
+}
