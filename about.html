@@ -56,6 +56,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin: 2rem auto;
             max-width: 1200px;
+
         }
 
         .profile-img {
@@ -120,8 +121,12 @@
             background: #2c3e50;
             color: white;
             position: fixed;
-            bottom: 0;
+            bottom: -100px;
             width: 100%;
+        }
+
+        footer.visible {
+            bottom: 0;
         }
 
         @media (max-width: 768px) {
@@ -198,9 +203,32 @@
         </ul>
     </section>
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const footer = document.querySelector('footer');
+            const scrollThreshold = 10; // Pixels from bottom to trigger
+
+            function checkScroll() {
+                // Check if scrolled to bottom (with small threshold)
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - scrollThreshold) {
+                    footer.classList.add('visible');
+                } else {
+                    footer.classList.remove('visible');
+                }
+            }
+
+            // Run on initial load and scroll
+            checkScroll();
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+
+
     <footer>
-        <p>&copy; 2024 All rights reserved.</p>
+        <p>&copy; 2025 All rights reserved.</p>
     </footer>
+    <div id="end-of-page"></div>
 </body>
 
 </html>
