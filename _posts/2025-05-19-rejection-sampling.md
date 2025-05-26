@@ -5,10 +5,19 @@ layout: post
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['\\(','\\)'], ['$', '$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 
 ## Overview:
-Rejection Sampling is an algorithm that provides us with an intuitive way o sample from random variables from a **target distribution**, called \(q(x)\), that cannot be sampled from directly but is known and a **proposal distribution**, call it \(p(x)\), that can be sampled from directly. The rejection sampling algorithm requires samples to be drawn from \(p(x)\) and are evaluated to accept whether the sample can be assumed to be drawn from \(q(x)\). If the sample cannot be assumed to be drawn from \(q(x)\), the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from \(p(x)\) relies on the overlap between \(p(x)\) and \(q(x)\). If \(p(x)\) and \(q(x)\) are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we look for distributions from which we construct the constant $M$: 
+Rejection Sampling is an algorithm that provides us with an intuitive way to sample from random variables from a **target distribution**, called \(q(x)\), that cannot be sampled from directly but is known and a **proposal distribution**, call it \(p(x)\), that can be sampled from directly. The rejection sampling algorithm requires samples to be drawn from \(p(x)\) and are evaluated to accept whether the sample can be assumed to be drawn from \(q(x)\). If the sample cannot be assumed to be drawn from \(q(x)\), the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from \(p(x)\) relies on the overlap between \(p(x)\) and \(q(x)\). If \(p(x)\) and \(q(x)\) are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we look for distributions from which we construct the constant $M$: 
 
 $$M = \sup_{x \in \Omega} \frac{q(x)}{p(x)} < \infty$$
 
