@@ -1,22 +1,13 @@
+title: Your Site Title
+description: Your site description
+url: "https://zunzun08.github.io"
+baseurl: "" # Leave empty for user.github.io sites
+
 plugins:
   - jekyll-feed
 
-# For USERNAME.github.io (main site)
-baseurl: "" 
-url: "https://zunzun08.github.io"
-
-# Minima settings
+# Minima settings (if using minima theme)
 minima:
   skin: auto
   social_links:
     github: zunzun08
-  footer_content: false
-
-# Markdown processing
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-# Optional (better for GitHub Pages)
-timezone: America/Chicago  # Set your timezone
-future: false  # Don't publish posts with future dates

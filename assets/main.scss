@@ -1,0 +1,43 @@
+// Header styles
+header {
+    background: #2c3e50;
+    padding: 1rem;
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: 0 1rem;
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// Footer styles
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+
+    .social-links {
+        margin-bottom: 0.5rem;
+
+        a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+    }
+}
