@@ -1,13 +1,14 @@
-title: Your Site Title
-description: Your site description
-url: "https://zunzun08.github.io"
-baseurl: "" # Leave empty for user.github.io sites
+theme: minima  # Default theme - you can change this
 
+# Site settings
+title: Cristian Compean
+description: Portfolio website for Cristian Compean
+
+# Build settings
+markdown: kramdown
 plugins:
   - jekyll-feed
 
-# Minima settings (if using minima theme)
-minima:
-  skin: auto
-  social_links:
-    github: zunzun08
+# MathJax support
+kramdown:
+  math_engine: mathjax

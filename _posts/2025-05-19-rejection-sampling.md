@@ -1,6 +1,6 @@
 
 ---
-layout: post
+layout: default
 title: "Rejection Sampling"
 permalink: /2025/05/19/rejection-sampling
 ---
