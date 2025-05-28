@@ -1,56 +1,11 @@
 <!DOCTYPE html>
-<html lang=" en">
+<html lang=" en-US">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Rejection Sampling | zunzun08.github.io</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Rejection Sampling" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Overview Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a target distribution, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a proposal distribution, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$:" />
-<meta property="og:description" content="Overview Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a target distribution, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a proposal distribution, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$:" />
-<link rel="canonical" href="http://localhost:4000/zunzun08.github.io/2025/05/19/rejection-sampling.html" />
-<meta property="og:url" content="http://localhost:4000/zunzun08.github.io/2025/05/19/rejection-sampling.html" />
-<meta property="og:site_name" content="zunzun08.github.io" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-05-19T00:00:00-05:00" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Rejection Sampling" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-19T00:00:00-05:00","datePublished":"2025-05-19T00:00:00-05:00","description":"Overview Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a target distribution, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a proposal distribution, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$:","headline":"Rejection Sampling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/zunzun08.github.io/2025/05/19/rejection-sampling.html"},"url":"http://localhost:4000/zunzun08.github.io/2025/05/19/rejection-sampling.html"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/zunzun08.github.io/%20/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/zunzun08.github.io/feed.xml" title="zunzun08.github.io" /></head>
-
-<body><header class="site-header" role="banner">
-
-  <div class="wrapper"><a class="site-title" rel="author" href="/zunzun08.github.io/">zunzun08.github.io</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-        <div class="wrapper">
-            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Rejection Sampling</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="2025-05-19T00:00:00-05:00" itemprop="datePublished">May 19, 2025
-      </time></p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rejection Sampling</title>
+    <!-- MathJax Configuration -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script type="text/x-mathjax-config">
@@ -61,18 +16,37 @@
       }
     });
   </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
--->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    type="text/javascript"></script>
+
+<style>
+    .MathJax {
+        font-size: 1.1em;
+    }
+</style>
+    <link rel="stylesheet" href="/%20/assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        
+<hr />
+<p>layout: post_with_sidebar
+title: “Rejection Sampling”
+permalink: /2025/05/19/rejection-sampling
+—</p>
+
 <h2 id="overview">Overview</h2>
 <p>Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a <strong>target distribution</strong>, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a <strong>proposal distribution</strong>, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$:</p>
 
 \[M = \sup_{x \in \Omega} \frac{q(x)}{p(x)} &lt; \infty\]
 
 <p>We note that $M \geq 1$:
-<br />
-<strong>Proof:</strong>
-<br />
-Suppose $ M &lt; 1 $.</p>
+<br /></p>
+
+<h3 id="proof"><strong>Proof:</strong></h3>
+
+<p>Suppose $ M &lt; 1 $.</p>
 
 <p>Since $M$ is the supremum of $\frac{q(x)}{p(x)}$, then for all $x$:
 \(M \geq \frac{q(x)}{p(x)} \implies M p(x) \geq q(x).\)</p>
@@ -84,6 +58,8 @@ Since $ p(x) $ and $ q(x) $ are p.d.f.s, $ \int p(x) \, dx = \int q(x) \, dx = 1
 \[M \geq 1,\]
 
 <p>which contradicts the assumption $ M &lt; 1 $.</p>
+
+<p><strong>QED</strong></p>
 
 <p>Since $M \geq 1$, we know the following must be true for $q(x)$:
 <br /></p>
@@ -130,7 +106,7 @@ def rejection_sampling(num_samples, M, prop_dist, target_dist):
 <h3 id="example">Example</h3>
 <p>Here we use $p \sim \text{Exp}(\lambda = \frac{1}{2})$ to target a standard exponential distribution:</p>
 
-<p><img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" /></p>
+<p><img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" width="400" /></p>
 
 <h3 id="proof-of-rejection-sampling">Proof of Rejection Sampling</h3>
 <p>Our goal is to show that if we follow the rejection sample algorithm, the random variable we drew $X$ from $p(x)$, can be said $X \sim q(x)$. Probability theory tells us that if  $X \sim q(x)$, the following are equivalent:</p>
@@ -190,34 +166,8 @@ By the law of Total Probability:</p>
 
 <p>Therefore, given we accept the random variable we sampled, we’ve shown $X \sim q(x)$.</p>
 
-  </div><a class="u-url" href="/zunzun08.github.io/2025/05/19/rejection-sampling.html" hidden></a>
-</article>
 
-        </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/zunzun08.github.io/"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">zunzun08.github.io</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">zunzun08.github.io</li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p></p>
-      </div>
     </div>
-
-  </div>
-
-</footer>
 </body>
 
 </html>

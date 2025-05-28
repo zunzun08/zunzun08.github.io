@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Cristian Compean </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: white;
+        }
+
+        /* Header/Navigation */
+        header {
+            background: linear-gradient(to bottom, #2c3e50, #3498dc);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1> Blog </h1>
+    <div class="content-wrapper">
+
+        <div class="text-content">
+            <h2>Sampling and Simulation</h2>
+            <p> A detailed look into different sampling algorithms designed to build intuition over the idea of
+                distributional similarity.
+                The measure of distributional similarity that's built up to in this deep dive is the Overlap
+                measure. The overlap measure tells us given
+                two individuals drawn from distinct distributions, how likely is it that we can replace one with the
+                other? The order in which we arrive at these ideas is
+                sequential and we observe that regardless of its complexity, sampling algorithms have to use some
+                measure of distributional similarity to work.
+            </p>
+            <br>
+            <ul>
+                <li><a href="/2025/05/19/rejection-sampling">Rejection Sampling Algorithm</a></li>
+                <li><a href="/2025/05/18/metropolis-hastings">Metropolis-Hastings Algorithm</a></li>
+                <li><a href="/2025/05/27/overlap">Overlap</a></li>
+        </div>
+        </ul>
+    </div>
+
+</body>
+
+</html>

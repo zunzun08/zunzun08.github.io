@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/zunzun08.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/zunzun08.github.io/" rel="alternate" type="text/html" /><updated>2025-05-26T14:56:41-05:00</updated><id>http://localhost:4000/zunzun08.github.io/feed.xml</id><title type="html">zunzun08.github.io</title><entry><title type="html">Rejection Sampling</title><link href="http://localhost:4000/zunzun08.github.io/2025/05/19/rejection-sampling.html" rel="alternate" type="text/html" title="Rejection Sampling" /><published>2025-05-19T00:00:00-05:00</published><updated>2025-05-19T00:00:00-05:00</updated><id>http://localhost:4000/zunzun08.github.io/2025/05/19/rejection-sampling</id><content type="html" xml:base="http://localhost:4000/zunzun08.github.io/2025/05/19/rejection-sampling.html"><![CDATA[<!--
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-28T12:53:23-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Cristian Compean</title><subtitle>Portfolio website for Cristian Compean</subtitle><entry><title type="html">Overlap Measure</title><link href="http://localhost:4000/2025/05/27/overlap" rel="alternate" type="text/html" title="Overlap Measure" /><published>2025-05-27T00:00:00-05:00</published><updated>2025-05-27T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/27/overlap</id><content type="html" xml:base="http://localhost:4000/2025/05/27/overlap"><![CDATA[<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
@@ -9,18 +10,145 @@
       }
     });
   </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
--->
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<h1 id="overlap">Overlap</h1>
+
+<p>Throughout this analysis, there’s been mention to the notion of overlap between two distributions. The goal of this section is to define overlap and how we can leverage its interpretation in application over the commonly used p-value.</p>
+
+<h2 id="overlap-in-rejection-sampling">Overlap in Rejection Sampling</h2>
+<p>When describing the rejection sampling algorithm, we showed that we could define the probability a sample was accepted as $\frac{1}{M}$. Here the constant M is defined as:
+\(\sup_{x \in \Omega}\frac{q(x)}{p(x)}\)
+Note that if $q(x) = p(x)$ then the sample would always be accepted.</p>
+
+<p>Similarly, if $q(x) = c p(x)$ where c is a constant, then the probability of acceptance would become $\frac{1}{c}$. Of course, this definition leads to conclusion that if two distributions are more “overlapping”, then the probability of acceptance draws closer to 1 (Figure add). The challenge with rejection sampling is $M &lt; \infty$. Often times, M being less than infinity is not the case removing both the interpretation of overlap and rendering rejection sampling useless. We’d like to find a way to remove this unnecessary constraint and find a definition of overlap that works for any $p(x)$, $q(x)$.</p>
+
+<h2 id="overlap-in-metropolis-hastings">Overlap in Metropolis-Hastings</h2>
+<p>The second sampling algorithm we analyzed was the Metropolis-Hastings algorithm. One of the key properties of MH we derived was that it guarantees convergence to the stationary distribution under the condition of detailed balance. This provides an algorithm that works for any $p(x),  q(x)$ regardless of how slow that convergence may be. This provides a significant advantage over Rejection Sampling since we can define overlap for any $p(x)$ and $q(x)$. However, the challenge now is defining overlap in the MH algorithm.</p>
+
+<p><br /></p>
+
+<p><strong>Claim:</strong>
+ The integral $\int \int \alpha(x’,x)p(x)q(x’)\text{d}x\text{d}x’$ gives us a measure of overlap of the MH algorithm.</p>
+
+<p><br />
+We’ll define Z to be a Bernoulli random variable indicating whether or not our sample was rejected and we’ll start with the following set up:</p>
+
+<p>Suppose a target distribution $q(x)$ and a proposal distribution $p(x)$.
+Let $X \sim q(x)$ and $Y \sim p(y)$. We’d like to know the probability X can replace Y after the test: $u &lt; \alpha(X, Y)$.</p>
+
+<p>Define $z$ to be a r.v st:
+\(X' = \begin{cases}
+X \text{ with probability } \alpha(X, Y) \\
+Y \text{ with probability } 1-\alpha(X, Y)
+\end{cases}\)
+<br /></p>
+
+<p>We’d like show $X’ \sim q(x)$.</p>
+
+<p>Clearly if we reject our sample $X$, $X’ \sim q$ since $X’ = Y$. If we accept the sample, then we were saying $X$ can replace $Y$. We can make the following observation of the probability of replacement:</p>
+
+<p>\(\Pr(Z=1 \cap X' \in A | X) = \int \int \int_A 1(U &lt; \alpha(X, Y)) q(x)p(y)\text{d}u\text{d}x\text{d}y\)
+\(= \int \int \alpha(x,y)q(x)p(y)\text{d}x\text{d}y\)
+Where $A$ is the sample space of $q(x)$. This is our overlap measure, we call it r.
+\(r = \int \int \alpha(x,y)q(x)p(y)\text{d}x\text{d}y\)
+Since r is a well defined probability, $r \in [0,1]$ and has the following interpretation:</p>
+
+<ol>
+   <li>If r is close to zero, that indicates the target and proposal are distinct distributions since there is a low replacement probability.
+    <li>If r is close to one, then the proposal and distinct are similar distributions.
+    <li>Computing r directly may not be always possible, the probability must be estimated using Monte Carlo methods.
+&lt;/ol&gt;
+<br />
+In conclusion, since the Metropolis Hastings converges to the target distribution for any proposal distribution, the overlap measure for the Metropolis Hastings works for any two $p(x)$ and $q(x)$. This allows us to determine the similarity between samples coming from two different distributions by determining how likely one sample is to replace the other.
+
+
+## Similarity measures: p-value vs Overlap
+The p-value is the probability a test statistic is at least as extreme as the actual observed value, given that a null hypothesis is true. One common application of the p-value is to test the differences between two populations (X and Y) by using the means from the observed samples and constructing the following null hypothesis:
+
+$$
+H_0 \colon \ \mu_X - \mu_Y = 0 \quad
+H_1 \colon \ \mu_X - \mu_Y \neq 0
+$$
+
+We arrive at what is referred to as the two sample t-test. By rejecting the null hypothesis, we accept strong evidence to suggest the means are not the same, indicating a difference between the two populations. The threshold for p-value (commonly referred to as $\alpha$) is selected based on a widely accepted consensus, typically .05. However, given the goal is to measure differences between two populations, the threshold we set for the p-value is uninformative about the difference between the two populations.
+
+Instead of the p-value, we'd like to focus on $r$ and its interpretation as a measure of replacement between two populations to describe similarity between distinct distributions.
+
+
+### Example: p-value vs. Overlap
+For this example, we'll consider two populations:
+$$X_1, X_2, ..., X_N \text{ i.i.d from N(0,1)} $$
+and
+$$Y_1, Y_2, ..., Y_N \text{ i.i.d from N(}\mu \text{,1)}$$
+where $\mu \in [0,2]$. We'd like to compare the similarity of the two distributions using both a two sample mean test and $r$ and highlight the difference between the two measures as $\mu$ grows larger and the distributions grow farther apart. Since $r$ cannot be directly computed, it must be estimated using Monte Carlo methods. We'll estimate r using the following code:
+
+
+``` python
+import pandas as pd
+import scipy
+import numpy as np
+# Generate data
+np.random.seed(42)
+# For reproducibility
+means = np.arange(0, 200) / 100
+x = scipy.stats.norm.rvs(size=50)
+y = scipy.stats.norm.rvs(size=50)
+
+# Fit KDE for x (fixed)
+fx_hat = scipy.stats.gaussian_kde(x)
+fx_s = fx_hat.resample(1000).flatten()  # Pre-sample
+
+overlaps = []
+p_values = []
+
+for mu in means:
+    y_mu = y + mu
+    
+    # Fit KDE for shifted y
+    fy_hat = scipy.stats.gaussian_kde(y_mu)
+    #Drawing 1000 samples from the fy hat
+    fy_s = fy_hat.resample(1000).flatten()
+    
+    # Two-sample t-test (two-sided by default)
+    tstat, p_val = scipy.stats.ttest_ind(x, y_mu, equal_var=False)  # Welch's t-test
+    p_values.append(p_val)
+    
+    # Monte Carlo overlap estimation
+    eps = 1e-10  # Small constant to avoid division by zero
+    numerator = fx_hat(fy_s) * fy_hat(fx_s)
+    denom = fx_hat(fx_s) * fy_hat(fy_s)
+    alpha = np.minimum(1, (numerator / denom))
+    overlaps.append(np.mean(alpha))
+
+# Store results
+df = pd.DataFrame({'Overlap': overlaps, 'p-value': p_values}, index=means)
+```
+
+
+We obtain the following result:
+
+    \includegraphics[width=0.7\linewidth]{overlap (normal).png}
+
+From this example we see as the p-value dips below .05 and we begin to reject the null hypothesis, the overlap remains high at roughly .75 probability a sample from $\text{N(0,1)}$ could replace a sample from $\text{N(}\mu,1)$. From this example, we see the additional information we gain from using the overlap measure could be far more valuable to the researcher since three-fourth's of samples from one group could replace those of the other group.
+</li></li></li></ol>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Rejection Sampling</title><link href="http://localhost:4000/2025/05/19/rejection-sampling.html" rel="alternate" type="text/html" title="Rejection Sampling" /><published>2025-05-19T00:00:00-05:00</published><updated>2025-05-19T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/19/rejection-sampling</id><content type="html" xml:base="http://localhost:4000/2025/05/19/rejection-sampling.html"><![CDATA[<hr />
+<p>layout: post_with_sidebar
+title: “Rejection Sampling”
+permalink: /2025/05/19/rejection-sampling
+—</p>
+
 <h2 id="overview">Overview</h2>
 <p>Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a <strong>target distribution</strong>, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a <strong>proposal distribution</strong>, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$:</p>
 
 \[M = \sup_{x \in \Omega} \frac{q(x)}{p(x)} &lt; \infty\]
 
 <p>We note that $M \geq 1$:
-<br />
-<strong>Proof:</strong>
-<br />
-Suppose $ M &lt; 1 $.</p>
+<br /></p>
+
+<h3 id="proof"><strong>Proof:</strong></h3>
+
+<p>Suppose $ M &lt; 1 $.</p>
 
 <p>Since $M$ is the supremum of $\frac{q(x)}{p(x)}$, then for all $x$:
 \(M \geq \frac{q(x)}{p(x)} \implies M p(x) \geq q(x).\)</p>
@@ -32,6 +160,8 @@ Since $ p(x) $ and $ q(x) $ are p.d.f.s, $ \int p(x) \, dx = \int q(x) \, dx = 1
 \[M \geq 1,\]
 
 <p>which contradicts the assumption $ M &lt; 1 $.</p>
+
+<p><strong>QED</strong></p>
 
 <p>Since $M \geq 1$, we know the following must be true for $q(x)$:
 <br /></p>
@@ -78,7 +208,7 @@ def rejection_sampling(num_samples, M, prop_dist, target_dist):
 <h3 id="example">Example</h3>
 <p>Here we use $p \sim \text{Exp}(\lambda = \frac{1}{2})$ to target a standard exponential distribution:</p>
 
-<p><img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" /></p>
+<p><img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" width="400" /></p>
 
 <h3 id="proof-of-rejection-sampling">Proof of Rejection Sampling</h3>
 <p>Our goal is to show that if we follow the rejection sample algorithm, the random variable we drew $X$ from $p(x)$, can be said $X \sim q(x)$. Probability theory tells us that if  $X \sim q(x)$, the following are equivalent:</p>
@@ -136,24 +266,12 @@ By the law of Total Probability:</p>
 
 \[\Pr(X \in A | Z=1) = \frac{\frac{1}{M} \Pr(X \in A)}{\frac{1}{M}} = \Pr(X \in A) = Q(x)\]
 
-<p>Therefore, given we accept the random variable we sampled, we’ve shown $X \sim q(x)$.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Overview Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a target distribution, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a proposal distribution, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$:]]></summary></entry><entry><title type="html">Metropolis Hastings</title><link href="http://localhost:4000/zunzun08.github.io/2025/05/18/metropolis-hastings.html" rel="alternate" type="text/html" title="Metropolis Hastings" /><published>2025-05-18T00:00:00-05:00</published><updated>2025-05-18T00:00:00-05:00</updated><id>http://localhost:4000/zunzun08.github.io/2025/05/18/metropolis-hastings</id><content type="html" xml:base="http://localhost:4000/zunzun08.github.io/2025/05/18/metropolis-hastings.html"><![CDATA[<!--
----
-title: "Metropolis-Hastings Algorithm"
-layout: post
----
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        inlineMath: [['\\(','\\)'], ['$', '$']]
-      }
-    });
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
--->
+<p>Therefore, given we accept the random variable we sampled, we’ve shown $X \sim q(x)$.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[layout: post_with_sidebar title: “Rejection Sampling” permalink: /2025/05/19/rejection-sampling —]]></summary></entry><entry><title type="html">Metropolis Hastings</title><link href="http://localhost:4000/2025/05/18/metropolis-hastings.html" rel="alternate" type="text/html" title="Metropolis Hastings" /><published>2025-05-18T00:00:00-05:00</published><updated>2025-05-18T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/18/metropolis-hastings</id><content type="html" xml:base="http://localhost:4000/2025/05/18/metropolis-hastings.html"><![CDATA[<hr />
+<p>layout: default
+title: Metropolis-Hastings Algorithm
+nav_order: 2
+parent: Posts
+—</p>
 
 <h1 id="the-metropolis-hastings-algorithm">The Metropolis Hastings Algorithm</h1>
 
@@ -163,7 +281,9 @@ layout: post
 <h3 id="example">Example</h3>
 <p>Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution that is easy to sample from and $q(x)$ is difficult to sample from. By applying the MH Algorithm 10,000 times, and only sampling from $p(x)$, we can achieve the following result:</p>
 
-<p><img src="/assets/metropolis-hastings-animation.mp4" alt="MH Example Video" /></p>
+<video controls="" width="560">
+  <source src="/assets/videos/metropolis-hastings-animation.mp4" type="video/mp4" />
+</video>
 
 <p>Effectively, samples from $p(x)$ and concluding that they are accepted as approximations of $q(x)$.</p>
 
@@ -210,9 +330,11 @@ layout: post
 
 <p>Now applying the limit:</p>
 
-<p>\(\lim_{n \rightarrow \infty} \frac{1}{n}\text{Var}[a(x_i)] = 0\)
-\end{proof}
-\subsubsection{Markov Chain}</p>
+\[\lim_{n \rightarrow \infty} \frac{1}{n}\text{Var}[a(x_i)] = 0\]
+
+<p><strong>QED</strong></p>
+
+<h2 id="markov-chain">Markov Chain</h2>
 
 <p>A Markov chain is a stochastic process where the future state depends only on the current state and not on the sequence of events that preceded it. A key concept in Markov chains is the <strong>stationary distribution</strong>, which is a probability distribution that remains unchanged as the chain evolves over time.</p>
 
@@ -237,7 +359,7 @@ layout: post
 <p>If all three conditions are met then the following is true:
 If the initial state $<code class="language-plaintext highlighter-rouge">x_1</code>$,​ is drawn from the stationary distribution $<code class="language-plaintext highlighter-rouge">f(x)</code>$, and each subsequent state $<code class="language-plaintext highlighter-rouge">x_{i+1}</code>$ is drawn from $<code class="language-plaintext highlighter-rouge">\Pr⁡(⋅∣x_i)</code>$, then all states $<code class="language-plaintext highlighter-rouge">x_i</code>$ will also follow the stationary distribution $<code class="language-plaintext highlighter-rouge">f(x)</code>$.</p>
 
-<p>\subsubsection{Markov Chain Monte Carlo}</p>
+<h2 id="markov-chain-monte-carlo">Markov Chain Monte Carlo</h2>
 
 <p>Markov Chain Monte Carlo (MCMC) methods combine Monte Carlo sampling with Markov chains to generate samples from a target probability distribution $<code class="language-plaintext highlighter-rouge">f(x)</code>$.</p>
 
@@ -249,33 +371,28 @@ If the initial state $<code class="language-plaintext highlighter-rouge">x_1</c
 
 <p>By the definition above and the description above, the MH algorithm is an MCMC method.</p>
 
-<p>\subsection{Metropolis-Hastings Algorithm}
-\begin{enumerate}
-\item Pick $p(x)$ and $q(x)$ where $p(x)$ is a distribution that can be easily sampled from.
-\item Set an initial value of $x$ (could be anything, keep it reasonable)
-\item Take $x’$ from $p(x)$
-\item Evaluate $q(x’)$
-\item Compute 
-$\alpha(x’, x) = \min(1, \frac{p(x’)q(x|x’)}{p(x)q(x’|x)})$</p>
+<h2 id="metropolis-hastings-algorithm">Metropolis-Hastings Algorithm</h2>
+<ol>
+<li>Pick $p(x)$ and $q(x)$ where $p(x)$ is a distribution that can be easily sampled from.</li>
+<li>Set an initial value of $x$ (could be anything, keep it reasonable)</li>
+<li>Take $x'$ from $p(x)$</li>
+<li>Evaluate $q(x')$</li>
+<li>Compute 
+$\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$</li>
 
-<p>\item Draw a random sample $u$ from $\text{Uniform}[0,1]$
-\item Accept or reject: 
-   If $u &lt; \alpha(x’,x)$:
-	$x_2 = x’$
+<li>Draw a random sample $u$ from $\text{Uniform}[0,1]$</li>
+<li> Accept or reject: 
+   If $u &lt; \alpha(x',x)$:
+	$x_2 = x'$
 	,else:
 		$x_2 = x_1$
-\end{enumerate}</p>
+  </li>
+</ol>
 
-<p>\newpage
-\subsection{Proof of Metropolis Hastings Algorithm}
-From the algorithm we know applying the MH Algorithm does the following:</p>
+<h2 id="proof-of-metropolis-hastings-algorithm">Proof of Metropolis Hastings Algorithm</h2>
+<p>From the algorithm we know applying the MH Algorithm does the following:</p>
 
-<p>\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{metropolis Movement.png}
-    \caption{Metropolis Hastings Steps}
-    \label{fig:MH movement}
-\end{figure}</p>
+<p><img src="/assets/metropolis-movement.png" alt="MH Movement" width="400" /></p>
 
 <table>
   <tbody>
@@ -369,4 +486,4 @@ From the previous section we know the probability of transition is:</p>
 We can integrate both sides w.r.t $x_n$ and find:
 \(q(x') = \int \Pr(x' |x_n)q(x_n)dx_n\)
 \(\Rightarrow
-q(x_{n+1}) = \int \Pr(x_{n+1} |x_n)q(x_n)dx_n\)</p>]]></content><author><name></name></author><summary type="html"><![CDATA[&lt;!– title: “Metropolis-Hastings Algorithm” layout: post —]]></summary></entry></feed>
+q(x_{n+1}) = \int \Pr(x_{n+1} |x_n)q(x_n)dx_n\)</p>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry></feed>
