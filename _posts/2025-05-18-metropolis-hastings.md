@@ -23,7 +23,7 @@ Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution
 
 
 <video controls width="560">
-  <source src="assets/videos/metropolis-hastings-animation.mp4" type="video/mp4">
+  <source src="/assets/videos/metropolis-hastings-animation.mp4" type="video/mp4">
 </video>
 
 Effectively, samples from $p(x)$ and concluding that they are accepted as approximations of $q(x)$.
@@ -139,7 +139,7 @@ $\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$</li>
 From the algorithm we know applying the MH Algorithm does the following:
 
 
- <img src="/assets/metropolis Movement.png" alt="MH Movement" width="400">
+ <img src="/assets/metropoli-movement.png" alt="MH Movement" width="400">
 
 
 This implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\text{Pr}(X_{i+1} | X_i)$ that facilitates the movement of random variables.
