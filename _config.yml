@@ -5,7 +5,7 @@ url: "zunzun08.github.io"
 
 
 
-remote_theme: just-the-docs
+theme: just-the-docs
 
 # Optional: Customize navigation
 # See https://just-the-docs.com/docs/navigation-structure/
