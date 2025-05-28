@@ -4,15 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>{{ page.title | default: site.title }}</title>
-    {% include head.html %}
-    <link rel="stylesheet" href="{{ " /assets/css/style.css" | relative_url }}">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- MathJax Support -->
+    {% include head-custom.html %}
+
+    <!-- Just the Docs sidebar compatibility -->
+    {% if site.remote_theme == 'pmarsceill/just-the-docs' %}
+    <link rel="stylesheet" href="{{ " assets/css/just-the-docs.css" | relative_url }}">
+    <script src="{{ " assets/js/just-the-docs.js" | relative_url }}" defer></script>
+    {% endif %}
 </head>
 
 <body>
     <div class="container">
-        {{ content }}
+        {% if site.remote_theme != 'pmarsceill/just-the-docs' %}
+        <!-- Custom sidebar implementation -->
+        <div class="sidebar">
+            {% include toc.html html=content %}
+        </div>
+        {% endif %}
+
+        <div class="main-content">
+            {{ content }}
+        </div>
     </div>
+
+    <!-- Optional footer -->
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    </footer>
 </body>
 
 </html>

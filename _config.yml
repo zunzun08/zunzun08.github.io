@@ -1,35 +1,6 @@
 # Site settings
 title: Cristian Compean
 description: Portfolio website for Cristian Compean
+url: "https://zunzun08.github.io"
 
-# Theme settings
-remote_theme: pmarsceill/just-the-docs
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme
-  - jekyll-seo-tag
-
-# Build settings
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
-
-# Just the Docs specific settings
-just_the_docs:
-  # Enable or disable the site search
-  search: true
-  
-  # Define which collections are used in just-the-docs
-  collections:
-    # Assign the "posts" collection to show in navigation
-    posts:
-      name: Posts
-      output: true
-
-  # Enable or disable heading anchors
-  heading_anchors: true
-
-  # Enable or disable the TOC
-  toc: true
-  toc_heading: "On this page"
+theme: minima

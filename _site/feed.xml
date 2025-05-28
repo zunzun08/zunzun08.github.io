@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-28T12:53:23-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Cristian Compean</title><subtitle>Portfolio website for Cristian Compean</subtitle><entry><title type="html">Overlap Measure</title><link href="http://localhost:4000/2025/05/27/overlap" rel="alternate" type="text/html" title="Overlap Measure" /><published>2025-05-27T00:00:00-05:00</published><updated>2025-05-27T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/27/overlap</id><content type="html" xml:base="http://localhost:4000/2025/05/27/overlap"><![CDATA[<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-28T13:41:54-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Cristian Compean</title><subtitle>Portfolio website for Cristian Compean</subtitle><entry><title type="html">Overlap Measure</title><link href="http://localhost:4000/2025/05/27/overlap" rel="alternate" type="text/html" title="Overlap Measure" /><published>2025-05-27T00:00:00-05:00</published><updated>2025-05-27T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/27/overlap</id><content type="html" xml:base="http://localhost:4000/2025/05/27/overlap"><![CDATA[<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
 <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -133,7 +133,7 @@ We obtain the following result:
 
 From this example we see as the p-value dips below .05 and we begin to reject the null hypothesis, the overlap remains high at roughly .75 probability a sample from $\text{N(0,1)}$ could replace a sample from $\text{N(}\mu,1)$. From this example, we see the additional information we gain from using the overlap measure could be far more valuable to the researcher since three-fourth's of samples from one group could replace those of the other group.
 </li></li></li></ol>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Rejection Sampling</title><link href="http://localhost:4000/2025/05/19/rejection-sampling.html" rel="alternate" type="text/html" title="Rejection Sampling" /><published>2025-05-19T00:00:00-05:00</published><updated>2025-05-19T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/19/rejection-sampling</id><content type="html" xml:base="http://localhost:4000/2025/05/19/rejection-sampling.html"><![CDATA[<hr />
-<p>layout: post_with_sidebar
+<p>layout: posts_with_sidebar
 title: “Rejection Sampling”
 permalink: /2025/05/19/rejection-sampling
 —</p>
@@ -266,11 +266,10 @@ By the law of Total Probability:</p>
 
 \[\Pr(X \in A | Z=1) = \frac{\frac{1}{M} \Pr(X \in A)}{\frac{1}{M}} = \Pr(X \in A) = Q(x)\]
 
-<p>Therefore, given we accept the random variable we sampled, we’ve shown $X \sim q(x)$.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[layout: post_with_sidebar title: “Rejection Sampling” permalink: /2025/05/19/rejection-sampling —]]></summary></entry><entry><title type="html">Metropolis Hastings</title><link href="http://localhost:4000/2025/05/18/metropolis-hastings.html" rel="alternate" type="text/html" title="Metropolis Hastings" /><published>2025-05-18T00:00:00-05:00</published><updated>2025-05-18T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/18/metropolis-hastings</id><content type="html" xml:base="http://localhost:4000/2025/05/18/metropolis-hastings.html"><![CDATA[<hr />
+<p>Therefore, given we accept the random variable we sampled, we’ve shown $X \sim q(x)$.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[layout: posts_with_sidebar title: “Rejection Sampling” permalink: /2025/05/19/rejection-sampling —]]></summary></entry><entry><title type="html">Metropolis Hastings</title><link href="http://localhost:4000/2025/05/18/metropolis-hastings.html" rel="alternate" type="text/html" title="Metropolis Hastings" /><published>2025-05-18T00:00:00-05:00</published><updated>2025-05-18T00:00:00-05:00</updated><id>http://localhost:4000/2025/05/18/metropolis-hastings</id><content type="html" xml:base="http://localhost:4000/2025/05/18/metropolis-hastings.html"><![CDATA[<hr />
 <p>layout: default
 title: Metropolis-Hastings Algorithm
-nav_order: 2
-parent: Posts
+nav_enabled: true
 —</p>
 
 <h1 id="the-metropolis-hastings-algorithm">The Metropolis Hastings Algorithm</h1>

@@ -3,11 +3,11 @@
 ---
 layout: default
 title: Metropolis-Hastings Algorithm
-nav_order: 2
-parent: Posts
+nav_enabled: true
 ---
 
-# The Metropolis Hastings Algorithm
+
+#  The Metropolis-Hastings Algorithm
 
 ## Introduction
 The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) method that allows us to generate samples from a target distribution. A target distribution is a function whose form is known but whose constant of proportionality is unknown and/or cannot be calculated through traditional methods or numerical methods. Because the constant of proportionality cannot be calculated, traditional methods of sampling such as the inverse CDF method cannot be applied. We'll assume the rejection sampling method does not work here for our proposal and target distributions. Instead, we turn to the Metropolis Hastings algorithm which works by also works by an iterative process. The Metropolis Hastings algorithm draws samples from a proposal probability density function and based on an overlap measure, the sample is accepted or rejected. After some number of iterations, the samples accepted by MH algorithm follow target distribution, without ever calculating the constant of integration. 
