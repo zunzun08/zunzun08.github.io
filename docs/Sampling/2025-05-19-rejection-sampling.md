@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Rejection Sampling"
+title: Rejection Sampling
 permalink: /2025/05/19/rejection-sampling
-parent: sampling
+parent: Sampling
 nav_order: 1
 ---
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
