@@ -5,10 +5,10 @@ url: "zunzun08.github.io"
 
 
 
-theme: minima
-# In _config.yml
-minima:
-  nav_pages:
-    - about.html
-  skin: auto  # or 'dark', 'solarized', etc.
-markdown: kramdown
+theme: just-the-docs
+
+# Optional: Customize navigation
+# See https://just-the-docs.com/docs/navigation-structure/
+just_the_docs:
+  logo: "/assets/images/logo.png"
+  search_enabled: true

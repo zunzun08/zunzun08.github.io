@@ -1,7 +1,8 @@
 ---
-layout: default
+
 title: "Rejection Sampling"
 permalink: /2025/05/19/rejection-sampling
+nav_order: 2
 ---
 
 ## Overview

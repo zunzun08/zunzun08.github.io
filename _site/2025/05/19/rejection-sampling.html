@@ -37,7 +37,17 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h2 id="overview">Overview</h2>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Rejection Sampling</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-05-19T00:00:00-05:00" itemprop="datePublished">May 19, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="overview">Overview</h2>
 <p>Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a <strong>target distribution</strong>, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a <strong>proposal distribution</strong>, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$:</p>
 
 \[M = \sup_{x \in \Omega} \frac{q(x)}{p(x)} &lt; \infty\]
@@ -166,6 +176,9 @@ By the law of Total Probability:</p>
 \[\Pr(X \in A | Z=1) = \frac{\frac{1}{M} \Pr(X \in A)}{\frac{1}{M}} = \Pr(X \in A) = Q(x)\]
 
 <p>Therefore, given we accept the random variable we sampled, we’ve shown $X \sim q(x)$.</p>
+
+  </div><a class="u-url" href="/2025/05/19/rejection-sampling" hidden></a>
+</article>
 
       </div>
     </main><footer class="site-footer h-card">
