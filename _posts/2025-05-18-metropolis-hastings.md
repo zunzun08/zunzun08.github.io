@@ -22,8 +22,9 @@ The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) meth
 Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution that is easy to sample from and $q(x)$ is difficult to sample from. By applying the MH Algorithm 10,000 times, and only sampling from $p(x)$, we can achieve the following result:
 
 
-![MH Example Video](/assets/metropolis-hastings-animation.mp4)
-
+<video controls width="560">
+  <source src="assets/videos/metropolis-hastings-animation.mp4" type="video/mp4">
+</video>
 
 Effectively, samples from $p(x)$ and concluding that they are accepted as approximations of $q(x)$.
 
@@ -82,8 +83,9 @@ $$=\frac{1}{n^2}(n\text{Var}[a(x_i)]) = \frac{1}{n}\text{Var}[a(x_i)]$$
 Now applying the limit:
 
 $$\lim_{n \rightarrow \infty} \frac{1}{n}\text{Var}[a(x_i)] = 0$$
-\end{proof}
-\subsubsection{Markov Chain}
+**QED**
+
+## Markov Chain
 
 A Markov chain is a stochastic process where the future state depends only on the current state and not on the sequence of events that preceded it. A key concept in Markov chains is the **stationary distribution**, which is a probability distribution that remains unchanged as the chain evolves over time.
 
@@ -99,7 +101,7 @@ $$
 If all three conditions are met then the following is true:
 If the initial state $`x_1`$,​ is drawn from the stationary distribution $`f(x)`$, and each subsequent state $`x_{i+1}`$ is drawn from $`\Pr⁡(⋅∣x_i)`$, then all states $`x_i`$ will also follow the stationary distribution $`f(x)`$. 
 
-\subsubsection{Markov Chain Monte Carlo}
+## Markov Chain Monte Carlo
 
 Markov Chain Monte Carlo (MCMC) methods combine Monte Carlo sampling with Markov chains to generate samples from a target probability distribution $`f(x)`$.
 
@@ -114,33 +116,31 @@ This approximation holds under the condition that the Markov chain will eventual
 By the definition above and the description above, the MH algorithm is an MCMC method.
 
 
-\subsection{Metropolis-Hastings Algorithm}
-\begin{enumerate}
-\item Pick $p(x)$ and $q(x)$ where $p(x)$ is a distribution that can be easily sampled from.
-\item Set an initial value of $x$ (could be anything, keep it reasonable)
-\item Take $x'$ from $p(x)$
-\item Evaluate $q(x')$
-\item Compute 
-$\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$
+## Metropolis-Hastings Algorithm
+<ol>
+<li>Pick $p(x)$ and $q(x)$ where $p(x)$ is a distribution that can be easily sampled from.</li>
+<li>Set an initial value of $x$ (could be anything, keep it reasonable)</li>
+<li>Take $x'$ from $p(x)$</li>
+<li>Evaluate $q(x')$</li>
+<li>Compute 
+$\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$</li>
 
-\item Draw a random sample $u$ from $\text{Uniform}[0,1]$
-\item Accept or reject: 
+<li>Draw a random sample $u$ from $\text{Uniform}[0,1]$</li>
+<li> Accept or reject: 
    If $u < \alpha(x',x)$:
 	$x_2 = x'$
 	,else:
 		$x_2 = x_1$
-\end{enumerate}
+  </li>
+</ol>
 
-\newpage
-\subsection{Proof of Metropolis Hastings Algorithm}
+
+## Proof of Metropolis Hastings Algorithm
 From the algorithm we know applying the MH Algorithm does the following:
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{metropolis Movement.png}
-    \caption{Metropolis Hastings Steps}
-    \label{fig:MH movement}
-\end{figure}
+
+ <img src="/assets/metropolis Movement.png" alt="MH Movement" width="400">
+
 
 This implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\text{Pr}(X_{i+1} | X_i)$ that facilitates the movement of random variables.
 

@@ -86,7 +86,7 @@ def rejection_sampling(num_samples, M, prop_dist, target_dist):
 ### Example
 Here we use $p \sim \text{Exp}(\lambda = \frac{1}{2})$ to target a standard exponential distribution:
 
-<img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" width="400"/>
+<img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" width="400">
 
 ### Proof of Rejection Sampling
 Our goal is to show that if we follow the rejection sample algorithm, the random variable we drew $X$ from $p(x)$, can be said $X \sim q(x)$. Probability theory tells us that if  $X \sim q(x)$, the following are equivalent:
