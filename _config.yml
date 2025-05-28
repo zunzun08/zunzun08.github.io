@@ -5,8 +5,9 @@ url: "zunzun08.github.io"
 
 
 
-theme: just-the-docs
-
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
 # Optional: Customize navigation
 # See https://just-the-docs.com/docs/navigation-structure/
 just_the_docs:
