@@ -83,6 +83,7 @@ $$=\frac{1}{n^2}(n\text{Var}[a(x_i)]) = \frac{1}{n}\text{Var}[a(x_i)]$$
 Now applying the limit:
 
 $$\lim_{n \rightarrow \infty} \frac{1}{n}\text{Var}[a(x_i)] = 0$$
+
 **QED**
 
 ## Markov Chain
@@ -139,7 +140,7 @@ $\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$</li>
 From the algorithm we know applying the MH Algorithm does the following:
 
 
- <img src="/assets/metropoli-movement.png" alt="MH Movement" width="400">
+ <img src="/assets/metropolis-movement.png" alt="MH Movement" width="400">
 
 
 This implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\text{Pr}(X_{i+1} | X_i)$ that facilitates the movement of random variables.

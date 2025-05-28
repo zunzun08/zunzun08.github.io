@@ -1,5 +1,3 @@
-theme: minima  # Default theme - you can change this
-
 # Site settings
 title: Cristian Compean
 description: Portfolio website for Cristian Compean
@@ -15,3 +13,7 @@ kramdown:
 
 plugins:
   - jekyll-toc
+
+remote_theme: pmarsceill/just-the-docs
+plugins:
+  - jekyll-remote-theme
