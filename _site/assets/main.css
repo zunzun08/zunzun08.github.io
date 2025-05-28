@@ -1,6 +1,5 @@
-// Header styles
 header {
-    background: #2c3e50;
+    background: #1d69b4;
     padding: 1rem;
 
     nav ul {
@@ -24,7 +23,7 @@ header {
     }
 }
 
-// Footer styles
+
 footer {
     background: #2c3e50;
     color: white;

@@ -1,6 +1,14 @@
 # Site settings
 title: Cristian Compean
 description: Portfolio website for Cristian Compean
-url: "https://zunzun08.github.io"
+url: "zunzun08.github.io"
+
+
 
 theme: minima
+# In _config.yml
+minima:
+  nav_pages:
+    - about.html
+  skin: auto  # or 'dark', 'solarized', etc.
+markdown: kramdown

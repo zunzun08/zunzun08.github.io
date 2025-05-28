@@ -1,12 +1,5 @@
 
 
----
-layout: default
-title: Metropolis-Hastings Algorithm
-nav_enabled: true
----
-
-
 #  The Metropolis-Hastings Algorithm
 
 ## Introduction
