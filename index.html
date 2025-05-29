@@ -26,6 +26,9 @@
             color: white;
             padding: 2rem 0 7rem 0;
             text-align: center;
+            height: 800 px;
+            width: 100%;
+            z-index: 100;
         }
 
         nav ul {
@@ -84,7 +87,73 @@
             padding-bottom: 60px;
         }
 
+        /*About Section */
+
+
+        /*About Section Image */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .profile-img {
+                order: -1;
+                max-width: 60%;
+                margin: 0 auto;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .profile-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: auto;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+
+
+        /*About Section Text */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: start;
+            background: linear-gradient(to bottom right, #f8f9fa 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 1200px;
+
+        }
+
+        .text-content {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .text-content p {
+            margin-bottom: 1rem;
+        }
+
+
+
         /* Footer */
+        footer.visible {
+            bottom: 0;
+        }
+
+
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -97,11 +166,16 @@
             z-index: 100;
             width: 100%;
         }
-
-        footer.visible {
-            bottom: 0;
-        }
     </style>
+
+    <!--End Of Style-->
+
+
+
+
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -111,9 +185,9 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </nav>
 
@@ -138,52 +212,187 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h1> Blog </h1>
-        <br>
-        <h2>Sampling and Simulation</h2>
-        <p> A detailed look into different sampling algorithms designed to build intuition over the idea of
-            distributional similarity.
-            The measure of distributional similarity that's built up to in this deep dive is the Overlap
-            measure. The overlap measure tells us given
-            two individuals drawn from distinct distributions, how likely is it that we can replace one with the
-            other? The order in which we arrive at these ideas is
-            sequential and we observe that regardless of its complexity, sampling algorithms have to use some
-            measure of distributional similarity to work.
-        </p>
-        <br>
-        <ul>
-            <li><a href="/2025/05/19/rejection-sampling">Rejection Sampling Algorithm</a></li>
-            <li><a href="/2025/05/18/metropolis-hastings">Metropolis-Hastings Algorithm</a></li>
-            <li><a href="/2025/05/27/overlap">Overlap</a></li>
-        </ul>
+
+
+
+    <!--Portfolio Section Goes here (Display 5 Posts Here)-->
+    <h1 id="portfolio">Portfolio</h1>
+
+
+
+
+
+
+
+    <!-- Blog Section Goes Here (Display 3 Latest Posts) -->
+    <h1 id="blog">Blog </h1>
+    <div class="content-wrapper">
+        <div class="text-content">
+
+
+            <br>
+
+            <h2>Sampling and Simulation</h2>
+
+            <p> A detailed look into different sampling algorithms designed to build intuition over the idea of
+                distributional similarity.
+                The measure of distributional similarity that's built up to in this deep dive is the Overlap
+                measure. The overlap measure tells us given
+                two individuals drawn from distinct distributions, how likely is it that we can replace one with the
+                other? The order in which we arrive at these ideas is
+                sequential and we observe that regardless of its complexity, sampling algorithms have to use some
+                measure of distributional similarity to work.
+            </p>
+            <ul>
+                <li><a href="/2025/05/19/rejection-sampling">Rejection Sampling Algorithm</a></li>
+                <li><a href="/2025/05/18/metropolis-hastings">Metropolis-Hastings Algorithm</a></li>
+                <li><a href="/2025/05/27/overlap">Overlap</a></li>
+
+            </ul>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 All rights reserved.</p>
-    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const footer = document.querySelector('footer');
-            const scrollThreshold = 5; // Pixels from bottom to trigger
 
-            function checkScroll() {
-                // Check if scrolled to bottom (with small threshold)
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - scrollThreshold) {
-                    footer.classList.add('visible');
-                } else {
-                    footer.classList.remove('visible');
+
+
+
+
+
+    <!--About section goes here-->
+    <h1 id="about">About </h2>
+        <div class="content-wrapper">
+            <div class="text-content">
+
+                <p>Hi again!
+                    <br>
+                <p>I am a 2025 graduate of The University of Texas at Austin with a double major in Economics and
+                    Mathematics.
+                    This is my personal website where I talk about my interest in Bayesian statistics,
+                    machine learning, and their applications across various industries.
+                </p>
+                I am a first-generation Mexican-American born and raised in Dallas, Texas. In my free time I enjoy
+                working on side projects (clearly), running, weight lifting, cooking Mexican dishes, and male fashion.
+                </p>
+
+                <p>
+                    After my first Calculus class at UT, I became obsessed with learning as much
+                    math as possible during my time as an undergrad. After 3 years of accumulating all that knowledge,
+                    I've been dying to have a place to put it and apply it so I decided to make my own
+                    platform!
+                </p>
+                <p>
+                    Join me as I explore statistical tools and their applications to real-world relationships.
+                </p>
+            </div>
+
+            <img src="assets/me.jpg" alt="Profile photo" width="300" class="profile-img" loading="lazy">
+        </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <div id="end-of-page"></div>
+</body>
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 All rights reserved.</p>
+</footer>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const footer = document.querySelector('footer');
+        const scrollThreshold = 5; // Pixels from bottom to trigger
+
+        function checkScroll() {
+            // Check if scrolled to bottom (with small threshold)
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - scrollThreshold) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        }
+
+        // Run on initial load and scroll
+        checkScroll();
+        window.addEventListener('scroll', checkScroll);
+    });
+</script>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (!targetElement) return;
+
+            // Custom scroll function with more options
+            smoothScrollTo(targetElement);
+        });
+    });
+
+    function smoothScrollTo(target) {
+        const headerOffset = 80; // Adjust this if you have a fixed header
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const duration = 800; // Animation duration in ms
+
+        // Use modern scroll API if available
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+        // Fallback for older browsers
+        else {
+            const start = window.pageYOffset;
+            const distance = offsetPosition - start;
+            const startTime = performance.now();
+
+            function scrollStep(timestamp) {
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const ease = easeInOutQuad(progress);
+
+                window.scrollTo(0, start + (distance * ease));
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(scrollStep);
                 }
             }
 
-            // Run on initial load and scroll
-            checkScroll();
-            window.addEventListener('scroll', checkScroll);
-        });
-    </script>
+            // Easing function for smooth acceleration/deceleration
+            function easeInOutQuad(t) {
+                return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+            }
+
+            window.requestAnimationFrame(scrollStep);
+        }
+    }
+</script>
+
+
+
 </body>
 
 </html>
