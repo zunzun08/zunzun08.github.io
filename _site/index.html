@@ -272,6 +272,14 @@
                 align-self: center;
             }
         }
+
+        .gif-image {
+            display: none;
+        }
+
+        .post-box:hover .gif-image {
+            display: block;
+        }
     </style>
 
     <!--End Of Style-->
@@ -353,11 +361,14 @@
                         </p>
                     </div>
                     <div class="post-image">
-                        <img src="/assets/videos/mh_animation.gif" alt="MH gif" width="200" loading="lazy">
+                        <!-- GIF with no src by default -->
+                        <img data-src="/assets/videos/mh_animation.gif" alt="MH Animation" class="gif-image"
+                            width="200">
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -516,6 +527,16 @@
         });
     });
 </script>
+
+<script>
+    document.getElementById('sampling-card').addEventListener('mouseenter', function () {
+        const gif = this.querySelector('.gif-image');
+        if (!gif.src) {
+            gif.src = gif.dataset.src;
+        }
+    });
+</script>
+
 
 </body>
 
