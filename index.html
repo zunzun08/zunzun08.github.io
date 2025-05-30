@@ -167,24 +167,6 @@
             width: 100%;
         }
 
-        /* Hover effects */
-        .content-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Gentle blue overlay on hover */
-        .content-wrapper:hover::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(173, 216, 230, 0.2);
-            /* Light blue with low opacity */
-            z-index: 0;
-        }
 
         /* Ensure text content stays above overlay */
         .text-content {
@@ -252,6 +234,7 @@
         .post-text {
             flex: 1;
         }
+
 
         .post-image {
             flex-shrink: 0;

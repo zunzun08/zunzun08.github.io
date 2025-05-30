@@ -42,11 +42,7 @@ Integrating both sides:
 $$
 M \int p(x) \, dx \geq \int q(x) \, dx.
 $$
-Since $ p(x) $ and $ q(x) $ are p.d.f.s, $ \int p(x) \, dx = \int q(x) \, dx = 1 $. Thus:
-
-$$
-M \geq 1,
-$$
+Since $ p(x) $ and $ q(x) $ are p.d.f.s, $ \int p(x) \, dx = \int q(x) \, dx = 1 $. Thus, M \geq 1,
 
 which contradicts the assumption $ M < 1 $. 
 
@@ -127,7 +123,7 @@ Essentially, what is the distribution of $X$ after we've accepted the sample? We
 $$\Pr(X \in A | Z=1) = Q(x)$$
 where $A$ is the sample space of $q(x)$.
 
-Using Bayes' Theorem we can rewrite $\Pr(X \in A | Z=1)$ as:
+Using Bayes' Theorem we can rewrite $\Pr(X  \in A | Z=1)$ as:
 
 $$
 \Pr(X \in A | Z=1) = \frac{\Pr(Z = 1 | X \in A) \cdot \Pr(X \in A)}{\Pr(Z=1)}
@@ -149,17 +145,17 @@ Looking deeper into $\Pr(Z=1 \cap K \in A)$, this is something we can evaluate:
 By the law of Total Probability:
 
 $$
-\Pr(Z=1 \cap K \in A) = \int_{A} (U < \frac{q(x)}{Mp(x)}) \cdot p(x)\text{dx} = \iint_{0}^{1} (U < \frac{q(x)}{Mp(x)}) \cdot p(x) \text{dx} = \int_{-\infty}^{\infty} \frac{q(x)}{Mp(x)}\cdot p(x) \text{dx}
+\Pr(Z=1 \cap K \in A) = \int_{A} (U < \frac{q(x)}{Mp(x)}) \cdot p(x)\text{dx} = \iint_{0}^{1} (U < \frac{q(x)}{Mp(x)}) \cdot p(x) \text{dx}
 $$
 
 $$
-\Rightarrow \int_{-\infty}^{\infty} \frac{q(x)}{M}\text{dx} = \frac{1}{M} \int_{-\infty}^{\infty}q(x)\text{dx} = \frac{1}{M} \Pr(X \in A) = \frac{1}{M} \cdot Q(x)
+\Rightarrow   \int_{-\infty}^{\infty} \frac{q(x)}{Mp(x)}\cdot p(x) \text{dx} \frac{1}{M} \int_{-\infty}^{\infty}q(x)\text{dx} = \frac{1}{M} \cdot Q(x)
 $$
 
 Now we turn our focus to the denominator $\Pr(Z=1)$. 
 
 $$
-\Pr(Z=1) = \int_{-\infty}^{\infty} 1(U < \frac{q(x)}{Mp(x)}) p(x) \text{dx} = \int_{-\infty}^{\infty} \frac{q(x)}{Mp(x)}p(x) \text{dx} = \frac{1}{M} \int_{-\infty}^{\infty} q(x)\text{dx} = \frac{1}{M} (1) = \frac{1}{M}
+\Pr(Z=1) = \int_{-\infty}^{\infty} 1(U < \frac{q(x)}{Mp(x)}) p(x) \text{dx} = \int_{-\infty}^{\infty} \frac{q(x)}{Mp(x)}p(x) \text{dx} = \frac{1}{M} \int_{-\infty}^{\infty} q(x)\text{dx} = \frac{1}{M}
 $$
 
 Finishing up we arrive at out final result:
