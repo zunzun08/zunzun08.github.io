@@ -156,7 +156,7 @@ We also wish to prove $q(X_{i+1}) = \int \Pr(X_{i+1} | X_{i}) q(X_{i}) dX_{i}$ w
 However, we first need to find $\Pr(x_{n+1} | x_n)$ is before we can show the stationary condition holds.
 
 
-## Finding $\Pr(X_{n+1} \vert X_n)$:
+### Finding $\Pr(X_{n+1} \vert X_n)$:
 $X_{n+1}$ can take on two values. Either $X_{n+1}$ takes on the values of $x'$ with some probability $w(x)$ or the sample is rejected in which case $X_{n+1} = x_n$. 
 We can represent this as:
 

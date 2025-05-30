@@ -2,7 +2,7 @@
 layout: default
 title: "Metropolis-Hastings Algorithm"
 permalink: /2025/05/18/Metropolis-Hastings
-parent: sampling
+parent: Sampling
 nav_order: 2
 ---
 
@@ -102,11 +102,12 @@ The MC Stationary property requires the following:
 3. The stationary distribution must satisfy the following process: 
 
 $$
-f(y) = \int \Pr(y | x) f(x) \text{dx}
+f(y) = \int \Pr(y \vert x) f(x) \text{dx}
 $$
 
 If all three conditions are met then the following is true:
-If the initial state $`x_1`$,​ is drawn from the stationary distribution $`f(x)`$, and each subsequent state $`x_{i+1}`$ is drawn from $`\Pr⁡(⋅∣x_i)`$, then all states $`x_i`$ will also follow the stationary distribution $`f(x)`$. 
+
+If the initial state $x_1$,​ is drawn from the stationary distribution $f(x)$, and each subsequent state $x_{i+1}$ is drawn from $\Pr⁡(⋅\vert x_i)$, then all states $x_i$ will also follow the stationary distribution $f(x)$. 
 
 ## Markov Chain Monte Carlo
 
@@ -149,13 +150,14 @@ From the algorithm we know applying the MH Algorithm does the following:
  <img src="/assets/metropolis-movement.png" alt="MH Movement" width="400">
 
 
-This implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\text{Pr}(X_{i+1} | X_i)$ that facilitates the movement of random variables.
+The algorithm implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\Pr(X_{i+1} \vert X_i)$ that facilitates the movement of random variables.
 
 We also wish to prove $q(X_{i+1}) = \int \Pr(X_{i+1} | X_{i}) q(X_{i}) dX_{i}$ which is the stationary condition for our target distribution.
 However, we first need to find $\Pr(x_{n+1} | x_n)$ is before we can show the stationary condition holds.
-\\
-Finding $\Pr(X_{n+1} | X_n)$:
-$X_{n+1}$ can take on two values. Either $X_{n+1}$ takes on the values of $x'$ with some probability w(x) or the sample is rejected in which case $X_{n+1} = x_n$. 
+
+
+### Finding $\Pr(X_{n+1} \vert X_n)$:
+$X_{n+1}$ can take on two values. Either $X_{n+1}$ takes on the values of $x'$ with some probability $w(x)$ or the sample is rejected in which case $X_{n+1} = x_n$. 
 We can represent this as:
 
 $$
@@ -165,13 +167,13 @@ x_n \text{ 1- w(x)}
 \end{cases}
 $$
 
-Since we are looking to determine $\Pr(X_{n+1} | X_n)$, using the Law of Total Probability, we get:
+Since we are looking to determine $\Pr(X_{n+1} \vert X_n)$, using the Law of Total Probability, we get:
 
 $$
 \Pr(X_{n+1} | X_n) = \text{Pr}(X_{n+1} = x' | X_{n} = x_{n} ) + (1- \text{Pr}(X_{n+1} = x' | X_{n} = x_{n} )) \cdot 1(X_{n+1} = X_n)
 $$
 
-Where $1(X_{n+1} = X_n)$ is an indicator variable that tells us our sample was rejected. Let's take  $\Pr(X_{n+1} = x' | X_{n} = x_n)$, the probability we move from one state to the next apart and quantify the result.
+Where $1(X_{n+1} = X_n)$ is an indicator variable that tells us our sample was rejected. Let's take  $\Pr(X_{n+1} = x' \vert X_{n} = x_n)$, the probability we move from one state to the next apart and quantify the result.
 
 $$
 \Pr(X_{n+1} = x' | X_{n} = x_n) = \Pr(X' | X_n = x_n) \cdot \Pr(U \leq \alpha(x', x_n) | X' = x', X_n =x_n) =q(x' | x_n) \alpha(x', x_n) 
@@ -189,7 +191,7 @@ $$
 w(x_n) = \int q(x_{n+1} | x_n) \alpha(x_{n+1}, x_n)dx_{n+1}
 $$
 
-and $f(x_{n+1} | x_n)$ is:
+and $f(x_{n+1} \vert x_n)$ is:
 
 $$
 f(x_{n+1} | x_n) = \frac{q(x_{n+1} | x_n) \alpha(x_{n+1}, x_n)}{\int q(x_{n+1}|x_n)\alpha(x_{n+1} , x_n) dx_{n+1}
