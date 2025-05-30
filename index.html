@@ -166,6 +166,112 @@
             z-index: 100;
             width: 100%;
         }
+
+        /* Hover effects */
+        .content-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gentle blue overlay on hover */
+        .content-wrapper:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(173, 216, 230, 0.2);
+            /* Light blue with low opacity */
+            z-index: 0;
+        }
+
+        /* Ensure text content stays above overlay */
+        .text-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Style for internal links */
+        .content-link {
+            color: inherit;
+            /* Inherits text color */
+            text-decoration: none;
+            /* Removes underline */
+            position: relative;
+        }
+
+        /* Add subtle underline on link hover */
+        .content-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+        }
+
+        /* Blog container styling */
+        .blog-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Individual post box styling */
+        .post-box {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .post-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Content layout */
+        .post-content h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .post-text-with-image {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .post-text {
+            flex: 1;
+        }
+
+        .post-image {
+            flex-shrink: 0;
+        }
+
+        .post-image img {
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .post-text-with-image {
+                flex-direction: column;
+            }
+
+            .post-image {
+                align-self: center;
+            }
+        }
     </style>
 
     <!--End Of Style-->
@@ -225,30 +331,32 @@
 
 
     <!-- Blog Section Goes Here (Display 3 Latest Posts) -->
-    <h1 id="blog">Blog </h1>
-    <div class="content-wrapper">
-        <div class="text-content">
-
-
-            <br>
-
-            <h2>Sampling and Simulation</h2>
-
-            <p> A detailed look into different sampling algorithms designed to build intuition over the idea of
-                distributional similarity.
-                The measure of distributional similarity that's built up to in this deep dive is the Overlap
-                measure. The overlap measure tells us given
-                two individuals drawn from distinct distributions, how likely is it that we can replace one with the
-                other? The order in which we arrive at these ideas is
-                sequential and we observe that regardless of its complexity, sampling algorithms have to use some
-                measure of distributional similarity to work.
-            </p>
-            <ul>
-                <li><a href="/2025/05/19/rejection-sampling">Rejection Sampling Algorithm</a></li>
-                <li><a href="/2025/05/18/metropolis-hastings">Metropolis-Hastings Algorithm</a></li>
-                <li><a href="/2025/05/27/overlap">Overlap</a></li>
-
-            </ul>
+    <h1 id="blog">Blog</h1>
+    <div class="blog-container">
+        <!-- Blog Post Box -->
+        <div class="post-box" id="sampling-card">
+            <div class="post-content">
+                <h2>Sampling and Simulation</h2>
+                <div class="post-text-with-image">
+                    <div class="post-text">
+                        <p>A detailed look into different sampling algorithms designed to build intuition over the idea
+                            of
+                            distributional similarity. The measure of distributional similarity that's built up to in
+                            this
+                            deep dive is the Overlap measure. The overlap measure tells us given two individuals drawn
+                            from
+                            distinct distributions, how likely is it that we can replace one with the other? The order
+                            in
+                            which we arrive at these ideas is sequential and we observe that regardless of its
+                            complexity,
+                            sampling algorithms have to use some measure of distributional similarity to work.
+                        </p>
+                    </div>
+                    <div class="post-image">
+                        <img src="/assets/videos/mh_animation.gif" alt="MH gif" width="200" loading="lazy">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -260,36 +368,36 @@
 
 
     <!--About section goes here-->
-    <h1 id="about">About </h2>
-        <div class="content-wrapper">
-            <div class="text-content">
+    <h1 id="about">About </h1>
+    <div class="content-wrapper">
+        <div class="text-content">
 
-                <p>Hi again!
-                    <br>
-                <p>I am a 2025 graduate of The University of Texas at Austin with a double major in Economics and
-                    Mathematics.
-                    This is my personal website where I talk about my interest in Bayesian statistics,
-                    machine learning, and their applications across various industries.
-                </p>
-                I am a first-generation Mexican-American born and raised in Dallas, Texas. In my free time I enjoy
-                working on side projects (clearly), running, weight lifting, cooking Mexican dishes, and male fashion.
-                </p>
+            <p>Hi again!
+                <br>
+            <p>I am a 2025 graduate of The University of Texas at Austin with a double major in Economics and
+                Mathematics.
+                This is my personal website where I talk about my interest in Bayesian statistics,
+                machine learning, and their applications across various industries.
+            </p>
+            I am a first-generation Mexican-American born and raised in Dallas, Texas. In my free time I enjoy
+            working on side projects (clearly), running, weight lifting, cooking Mexican dishes, and male
+            fashion.
+            </p>
 
-                <p>
-                    After my first Calculus class at UT, I became obsessed with learning as much
-                    math as possible during my time as an undergrad. After 3 years of accumulating all that knowledge,
-                    I've been dying to have a place to put it and apply it so I decided to make my own
-                    platform!
-                </p>
-                <p>
-                    Join me as I explore statistical tools and their applications to real-world relationships.
-                </p>
-            </div>
-
-            <img src="assets/me.jpg" alt="Profile photo" width="300" class="profile-img" loading="lazy">
+            <p>
+                After my first Calculus class at UT, I became obsessed with learning as much
+                math as possible during my time as an undergrad. After 3 years of accumulating all that
+                knowledge,
+                I've been dying to have a place to put it and apply it so I decided to make my own
+                platform!
+            </p>
+            <p>
+                Join me as I explore statistical tools and their applications to real-world relationships.
+            </p>
         </div>
 
-        </section>
+        <img src="assets/me.jpg" alt="Profile photo" width="300" class="profile-img" loading="lazy">
+    </div>
 
 
 
@@ -299,7 +407,8 @@
 
 
 
-        <div id="end-of-page"></div>
+
+    <div id="end-of-paper"></div>
 </body>
 
 
@@ -391,7 +500,22 @@
     }
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const card = document.getElementById('sampling-card');
 
+        card.addEventListener('click', function (e) {
+            // Check if the clicked element is a link or inside a link
+            if (e.target.closest('a')) {
+                // Let the link handle its own navigation
+                return;
+            }
+
+            // Navigate to the main Sampling and Simulation page
+            window.location.href = 'https://zunzun08.github.io/docs/Sampling/2025-05-28-sampling.html'; // UPDATE THIS URL
+        });
+    });
+</script>
 
 </body>
 
