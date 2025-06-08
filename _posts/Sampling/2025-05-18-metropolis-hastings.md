@@ -5,7 +5,6 @@ permalink: /2025/05/18/Metropolis-Hastings
 parent: Sampling
 nav_order: 2
 ---
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script type="text/x-mathjax-config">
@@ -146,7 +145,6 @@ $\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$</li>
 
 ## Proof of Metropolis Hastings Algorithm
 From the algorithm we know applying the MH Algorithm does the following:
-
 <p align="center">
  <img src="/assets/metropolis-movement.png" alt="MH Movement" width="400" />
  </p>
