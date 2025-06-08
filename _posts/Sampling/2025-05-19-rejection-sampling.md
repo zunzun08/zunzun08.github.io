@@ -39,9 +39,11 @@ M \geq \frac{q(x)}{p(x)} \implies M p(x) \geq q(x).
 $$
 
 Integrating both sides:
+
 $$
 M \int p(x) \, dx \geq \int q(x) \, dx.
 $$
+
 Since $ p(x) $ and $ q(x) $ are p.d.f.s, $ \int p(x) \, dx = \int q(x) \, dx = 1 $. Thus, M \geq 1,
 
 which contradicts the assumption $ M < 1 $. 
@@ -57,12 +59,12 @@ Since $M \geq 1$, we know the following must be true for $q(x)$:
 2. $p(x)$ and $q(x)$ share the same $\Omega$
 
 
-In rejection sampling we define overlap with $M$ since $M$ serves as a measure of similarity between $p(x)$ and $q(x)$. If $M$ is very close to 1, $p(x)$ and $q(x)$ are quite similar. if M is very close to 0, $p(x)$ and $q(x)$ are not similar. Note, a downside to rejection sampling is that $M$ must exist which heavily constrains the number of density functions we can apply rejection sampling sampling to. However, we know based on what was said above, the following figure shows us the relationship between $p(x)$ and $q(x)$.
+In rejection sampling, we define overlap with $M$ since $M$ serves as a measure of similarity between $p(x)$ and $q(x)$. If $M$ is very close to 1, $p(x)$ and $q(x)$ are quite similar. If $M$ is very close to 0, $p(x)$ and $q(x)$ are not similar. Note, a downside to rejection sampling is that $M$ must exist which heavily constrains the number of density functions we can apply rejection sampling sampling to. However, we know based on what was said above, the following figure shows us the relationship between $p(x)$ and $q(x)$.
 
 
 Once we've determined $M$, we can generate samples $X_1,X_2,…,X_n$ from $p(x)$ and apply the rejection sampling algorithm. We will show the accepted samples will then follow the target distribution $q(x)$.
 
-We can condense the above into the followin algorithm:
+We can condense the above into the following algorithm:
 
 1.Draw a sample $X \sim p(x)$
 
@@ -106,11 +108,11 @@ $$\Pr(X \in A) = \int_A q(x)\text{dx} = Q(x)$$
 
 Where $A$ is sample space of $q(x)$. This will be the idea we wish to prove.
 
-When we run the rejection sampling algorithm, there exists some probability we accept or reject the sample. This probability is random before the algorithm begins and based on the fact that we accept or reject, the outcome is binary. Whether or not the outcome occurs for every iteration of the algorithm is a random variable (r.v) that we call $Z$ where $Z$. We've defined the conditions when a sample $X$ is accepted rejected in the algorithm and it is based on the inequality:
+When we run the rejection sampling algorithm, there exists some probability we accept or reject the sample. This probability is random before the algorithm begins and based on the fact that we accept or reject, the outcome is binary. Whether or not the outcome occurs for every iteration of the algorithm is a random variable (r.v) that we call $Z$. We've defined the conditions when a sample $X$ is accepted rejected in the algorithm and it is based on the inequality:
 
 $U < \frac{q(x)}{M*p(x)}$ 
 
-It follows that since M is the supremum of $\frac{q(x)}{p(x)}$, if M exists then $\frac{q(x)}{M*p(x)}$ is bounded on the interval of $[0,1]$ for all $x$ in the support of $p(x)$ and $q(x)$. We can now assign the probability the event occurs to our new random variable $Z$ as:
+It follows that since M is the supremum of $\frac{q(x)}{p(x)}$, if $M$ exists then $\frac{q(x)}{M*p(x)}$ is bounded on the interval of $[0,1]$ for all $x$ in the support of $p(x)$ and $q(x)$. We can now assign the probability the event occurs to our new random variable $Z$ as:
 $$
 Z \sim  \text{Bernoulli}(\frac{q(x)}{Mp(x)})
 $$
@@ -119,11 +121,13 @@ Now that $Z$ is well defined, we turn our attention to the following:
 
 $$X \space | \space Z=1$$
 
-Essentially, what is the distribution of $X$ after we've accepted the sample? We want to show that given we've accepted our sample, we can say $X|Z=1 \sim q(x)$. To do so we'll need the following:
+We wish to answer: what is the distribution of $X$ after we've accepted the sample? We want to show that given an accepted sample,  the sample comes from our target distribution $q(x)$. To show that we'll need to prove:
+
 $$\Pr(X \in A | Z=1) = Q(x)$$
+
 where $A$ is the sample space of $q(x)$.
 
-Using Bayes' Theorem we can rewrite $\Pr(X  \in A | Z=1)$ as:
+Using Bayes' Theorem we can rewrite $\Pr(X  \in A \vert Z=1)$ as:
 
 $$
 \Pr(X \in A | Z=1) = \frac{\Pr(Z = 1 | X \in A) \cdot \Pr(X \in A)}{\Pr(Z=1)}

@@ -24,22 +24,24 @@
         header {
             background: linear-gradient(to bottom, #2c3e50, #3498db);
             color: white;
-            padding: 2rem 0 7rem 0;
+            padding: 2rem 1rem 4rem 1rem;
             text-align: center;
-            height: 800 px;
+            min-height: 100vh;
             width: 100%;
             z-index: 100;
         }
 
         nav ul {
             display: flex;
+            flex-wrap: wrap;
+            padding: 0 1rem;
             justify-content: center;
             list-style: none;
             margin-bottom: 2rem;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 10px 10px;
         }
 
         nav ul li a {
@@ -94,13 +96,15 @@
         @media (max-width: 768px) {
             .content-wrapper {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
+                padding: 20px;
+                margin: 1rem auto;
             }
 
             .profile-img {
-                order: -1;
-                max-width: 60%;
+                max-width: 80%;
                 margin: 0 auto;
+                order: -1;
             }
 
             .contact-links {
@@ -195,13 +199,14 @@
         }
 
         /* Blog container styling */
-        .blog-container {
+        .blog-container,
+        .portfolio-container {
             display: flex;
             flex-direction: column;
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 1rem;
         }
 
         /* Individual post box styling */
@@ -209,7 +214,7 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 25px;
+            padding: 15px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -229,6 +234,7 @@
             display: flex;
             gap: 30px;
             align-items: flex-start;
+            flex-direction: column;
         }
 
         .post-text {
@@ -238,6 +244,8 @@
 
         .post-image {
             flex-shrink: 0;
+            margin-top: 1rem;
+            align-self: center;
         }
 
         .post-image img {
@@ -289,9 +297,9 @@
         </nav>
 
         <div class="hero-content">
-            <h1>Hi, my name is Cristian Compean</h1>
+            <h1>Hi, my name is Cristian Compean.</h1>
             <p>
-                I am a data professional with specializations in machine learning,
+                I'm a data professional with specializations in machine learning,
                 data science, and data engineering.
             <div class="hero-links">
                 <a href="https://linkedin.com/in/cristianzcompean">
@@ -518,6 +526,13 @@
             gif.src = gif.dataset.src;
         }
     });
+</script>
+
+<script>
+    //Adding mobile support
+    card.addEventListener('touchstart', function (e) {
+        // Same as click handler
+    }, { passive: true });
 </script>
 
 
