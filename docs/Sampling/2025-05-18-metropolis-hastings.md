@@ -27,10 +27,11 @@ The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) meth
 ### Example
 Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution that is easy to sample from and $q(x)$ is difficult to sample from. By applying the MH Algorithm 10,000 times, and only sampling from $p(x)$, we can achieve the following result:
 
-
-<video controls width="560">
-  <source src="/assets/videos/metropolis-hastings-animation.mp4" type="video/mp4">
-</video>
+<p align="center">
+  <video controls width="560">
+    <source src="/assets/videos/metropolis-hastings-animation.mp4" type="video/mp4" />
+  </video>
+</p>
 
 Effectively, samples from $p(x)$ and concluding that they are accepted as approximations of $q(x)$.
 
@@ -146,9 +147,9 @@ $\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$</li>
 ## Proof of Metropolis Hastings Algorithm
 From the algorithm we know applying the MH Algorithm does the following:
 
-
- <img src="/assets/metropolis-movement.png" alt="MH Movement" width="400">
-
+<p align="center">
+ <img src="/assets/metropolis-movement.png" alt="MH Movement" width="400" />
+</p>
 
 The algorithm implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\Pr(X_{i+1} \vert X_i)$ that facilitates the movement of random variables.
 

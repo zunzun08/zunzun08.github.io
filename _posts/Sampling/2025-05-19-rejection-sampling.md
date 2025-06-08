@@ -21,6 +21,7 @@ nav_order: 1
 # Rejection Sampling
 
 ## Overview
+{:toc}
 Rejection Sampling is an algorithm that provides us with an intuitive way to sample random variables from a **target distribution**, $q(x)$, that cannot be sampled from directly but whose function form is known. We do so by using a **proposal distribution**, $p(x)$, that can be sampled from directly. The rejection sampling algorithm requires samples drawn from $p(x)$ to be evaluated on a probability the sample can be assumed to have been drawn from $q(x)$. If the sample is not assumed to be drawn from $q(x)$, the sample is rejected and the process is repeated. The underlying acceptance of the sample drawn from $p(x)$ relies on the overlap between $p(x)$ and $q(x)$. If $p(x)$ and $q(x)$ are similar distributions then we say the two distributions have high overlap and samples drawn from either distribution could be said to have been drawn from the other. The opposite is true for distributions with low overlap. Rejection sampling provides us with an introductory understanding of overlap as we define the likelihood samples can replace each other with the constant $M$: 
 
 $$M = \sup_{x \in \Omega} \frac{q(x)}{p(x)} < \infty$$
@@ -99,7 +100,9 @@ def rejection_sampling(num_samples, M, prop_dist, target_dist):
 ### Example
 Here we use $p \sim \text{Exp}(\lambda = \frac{1}{2})$ to target a standard exponential distribution:
 
-<img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" width="400">
+<p align="center">
+  <img src="/assets/rejection_sampling_example.png" alt="RS Exp Example" width="400" />
+</p>
 
 ### Proof of Rejection Sampling
 Our goal is to show that if we follow the rejection sample algorithm, the random variable we drew $X$ from $p(x)$, can be said $X \sim q(x)$. Probability theory tells us that if  $X \sim q(x)$, the following are equivalent:
