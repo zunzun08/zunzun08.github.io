@@ -9,7 +9,6 @@
     <style type="text/tailwindcss">
 
         @theme {
-            --color-black: #333;
             --font-display: "Oswald", "sans-serif";
         }
         html {
@@ -27,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="bg-blue-400 snap-y snap-mandatory overflow-y-scroll h-screen">
+<body class="bg-blue-500 snap-y snap-mandatory overflow-y-scroll h-screen">
 
 
     <!-- Navigation Bar-->
@@ -39,7 +38,7 @@
             <nav class="flex gap-5">
                 <a href="index.html">Home</a>
 
-                <a href="#portfolio">Portfolio</a>
+                <a href="#port_exp">Portfolio</a>
 
                 <a href="#blog">Blog</a>
 
@@ -88,34 +87,178 @@
             </svg>
         </a>
     </section>
-    '
 
 
 
-    '
-
-    <!-- Portfolio\Experience Section-->
-    <section id="port_exp" class="h-screen  snap-start relative bg-stone-50">
-        <div class="sticky flex border-b absolute top-0 left-0 font-bold text-black text-3xl mt-5">
-
-            <button id="button1"
-                class="cursor-pointer flex-1 py-2 px-4 focus:outline-none transition-all duration-200 hover:text-black active:text-black"
-                onclick="toggleContent('Portfolio', 'Experience' )"> Portfolio</button>\
 
 
-            <button id="button2"
-                class="cursor-pointer flex-1 py-2 px-4 focus:outline-none transition-all text-gray-400 duration-200 hover:text-black active:text-black"
-                onclick="toggleContent('Portfolio', 'Experience')">Experience</button>
 
-        </div>
-        <div id="Portfolio">
-            Portfolio
-        </div>
 
-        <div id="Experience" class="hidden">
-            Experience
+    <!-- Portfolio_button\Experience Section-->
+    <!-- Portfolio/Experience Section -->
+    <section id="port_exp" class="bg-stone-50 flex flex-col">
+        <title> Portfolio | Cristian Compean </title>
+
+        <!-- Button Container -->
+        <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-9 bg-stone-50 flex">
+            <button id="portfolio_button"
+                class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-sm font-semibold text-black">
+                Portfolio
+            </button>
+            <button id="experience_button"
+                class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-sm font-semibold text-gray-500">
+                Experience
+            </button>
         </div>
 
+
+
+
+        <!-- Content Container -->
+        <div id="experience_content">
+            <ol class="group/list">
+                <li class="mb-12">
+                    <div
+                        class="group relative grid pb-1 transition-all sm:grid-cols-6 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+
+                        <div
+                            class="absolute -inset-x-4 -inset-y- z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-blue-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,.1)] lg:group-hover:drop-shadow-lg">
+                        </div>
+
+                        <header
+                            class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 lg:col-span-2">
+                            June 2024 - Jan 2025
+                        </header>
+
+                        <div class="z-10 sm:col-span-6 lg:col-span-4">
+                            <h3 class="font-medium leading-snug text-black">
+                                <div>
+                                    <a class="text-black inline-flex items-baseline font-medium leading-tight  hover:text-blue-200 focus-visible:text-black group/link text-base"
+                                        href="https://www.embarkwithus.com" target="_blank" rel="noreferrer noopener"
+                                        aria_label="Data Science Intern (Embark)">
+                                        <span
+                                            class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                        <span> Data Science Intern,
+                                            <span class="inline-block"> Embark
+                                                <svg xmlns="https://www.w3.org/2000/svg" viewbox="0 0 0 20 20"
+                                                    fill="currentColor" class=" inline-block h-4 w-4 shrink-0"
+                                                    aria-hidden="true">
+                                                    <path fill-rule="evenodd">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </h3>
+                            <p class="mt-2 text-sm leading-normal">
+                                Supported data operations for the growth team by conducting exploratory data
+                                analysis and statistical analysis
+                                on various project metrics (e.g, revenue generated, hours billed, consultants
+                                assinged) to support optimal pricing strategy decisions.
+                                Cleaned, updated, and verified data accuracy across various CRM data storages
+                                using
+                                Pandas library for Python along with Matplotlib and Seaborn for data
+                                visualization
+                                and presentation.
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
+                                <li class="mr-1.5 mt-2">
+                                    <div
+                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                        Python
+                                    </div>
+                                </li>
+                                <li class="mr-1.5 mt-2">
+                                    <div
+                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                        Snowflake
+                                    </div>
+                                </li>
+                                <li class="mr-1.5 mt-2">
+                                    <div
+                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                        Tableau
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <!--Porfolio Content-->
+        <div id="portfolio_content">
+            <ol class="group/list">
+                <li class="mb-12">
+                    <div
+                        class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4  lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+
+                        <div
+                            class="absolute -inset-x-4 -inset-y- z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-blue-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,.1)] lg:group-hover:drop-shadow-lg">
+                        </div>
+
+                        <header
+                            class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 lg:col-span-2">
+                        </header>
+
+                        <div class="z-10 sm:col-span-6">
+                            <h3 class="font-medium leading-snug text-slate-200">
+                                <div>
+                                    <a class="text-black inline-flex items-baseline font-medium leading-tight hover:text-blue-200 focus-visible:text-black group/link text-base"
+                                        href="/_posts/Portfolio/2025-06-10-portfolio-website-blog.md" target="_blank"
+                                        rel="noreferrer noopener" aria_label="Website Link">
+                                        <span
+                                            class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                        <span> Portfolio Website
+                                            <svg xmlns="https://www.w3.org/2000/svg" viewbox="0 0 0 20 20"
+                                                fill="currentColor" class=" inline-block h-4 w-4 shrink-0"
+                                                aria-hidden="true">
+                                                <path fill-rule="evenodd">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </h3>
+                            <p class="mt-2 text-sm leading-normal">
+                                Learned some elements of web development and Git (GitHub Pages and version control) to
+                                create a personal website where I host my projects, work experience, and blog.
+                                Read more about the different versions of this website and my plans for the future of
+                                this website!
+                            </p>
+                            <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
+                                <li class="mr-1.5 mt-2">
+                                    <div
+                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                        HTML
+                                    </div>
+                                </li>
+                                <li class="mr-1.5 mt-2">
+                                    <div
+                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                        CSS
+                                    </div>
+                                </li>
+                                <li class="mr-1.5 mt-2">
+                                    <div
+                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                        JavaScript
+                                    </div>
+                                </li>
+                                <li class="mr-1.5 mt-2">
+                                    <div
+                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                        Git
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
     </section>
 
 
@@ -128,31 +271,59 @@
 
         <>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function setActiveButton(activeButtonId) {
+            // Reset both buttons to inactive state
+            document.getElementById('portfolio_button').classList.add('text-gray-500');
+            document.getElementById('portfolio_button').classList.remove('text-black');
+            document.getElementById('experience_button').classList.add('text-gray-500');
+            document.getElementById('experience_button').classList.remove('text-black');
+
+            // Activate the clicked button
+            const activeBtn = document.getElementById(activeButtonId);
+            activeBtn.classList.remove('text-gray-500');
+            activeBtn.classList.add('text-black');
+        }
+
+        function toggleContent(showId, hideId) {
+            // Toggle content visibility
+            document.getElementById(showId).classList.remove('hidden');
+            document.getElementById(hideId).classList.add('hidden');
+
+            // Update button states
+            setActiveButton(showId === 'portfolio_content' ? 'portfolio_button' : 'experience_button');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize with portfolio visible
+            toggleContent('portfolio_content', 'experience_content');
+
+            // Set up event listeners
+            document.getElementById('portfolio_button').addEventListener('click', function () {
+                toggleContent('portfolio_content', 'experience_content');
+            });
+
+            document.getElementById('experience_button').addEventListener('click', function () {
+                toggleContent('experience_content', 'portfolio_content');
+            });
+        });
+    </script>
+
+
+
+
 </body>
-
-
-
-
-
-
-
-
-
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        setActiveButton('button1');
-
-    });
-
-    function toggleContent(showId, hideId) {
-        document.getElementById(showId).classList.remove('hidden');
-        document.getElementById(hideId).classList.add('hidden')
-
-        setActiveButton(showId == 'content1' ? 'button1' : 'button2');
-    }
-
-</script>
 
 </html>
