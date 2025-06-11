@@ -21,7 +21,7 @@ nav_order: 2
 #  The Metropolis-Hastings Algorithm
 
 ## Introduction
-The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) method that allows us to generate samples from a target distribution. A target distribution is a function whose form is known but whose constant of proportionality is unknown and/or cannot be calculated through traditional methods or numerical methods. Because the constant of proportionality cannot be calculated, traditional methods of sampling such as the inverse CDF method cannot be applied. We'll assume the rejection sampling method does not work here for our proposal and target distributions. Instead, we turn to the Metropolis Hastings algorithm which works by also works by an iterative process. The Metropolis Hastings algorithm draws samples from a proposal probability density function and based on an overlap measure, the sample is accepted or rejected. After some number of iterations, the samples accepted by MH algorithm follow target distribution, without ever calculating the constant of integration. 
+The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) method that allows us to generate samples from a target distribution. A target distribution is a function whose form is known but whose constant of proportionality is unknown and/or cannot be calculated through traditional methods or numerical methods. Because the constant of proportionality cannot be calculated, traditional methods of sampling such as the inverse CDF method cannot be applied. We'll assume that the rejection sampling method does not work here for our proposal and target distributions. Instead, we turn to the Metropolis Hastings algorithm which works by also works by an iterative process. The Metropolis Hastings algorithm draws samples from a proposal probability density function and based on an overlap measure, the sample is accepted or rejected. After some number of iterations, the samples accepted by the MH algorithm follow the target distribution without ever having to  calculate the constant of integration. 
 
 ### Example
 Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution that is easy to sample from and $q(x)$ is difficult to sample from. By applying the MH Algorithm 10,000 times, and only sampling from $p(x)$, we can achieve the following result:
@@ -32,10 +32,10 @@ Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution
   </video>
 </p>
 
-Effectively, samples from $p(x)$ and concluding that they are accepted as approximations of $q(x)$.
+Effectively, samples from $p(x)$ and conclude that they are accepted as approximations of $q(x)$.
 
 ## Mathematical Background
-Before formally defining the Metropolis Hastings, I'd like to recall or introduce a few concepts the reader should be familiar with to understand the proof of the Metropolis-Hastings Algorithm.
+Before formally defining the MH algorithm, I'd like to recall or introduce a few concepts that the reader should be familiar with to understand the proof of the MH algorithm.
 
 ### Monte Carlo
 Monte Carlo methods are a class of computational techniques that use random sampling to approximate mathematical quantities, such as integrals. These methods are useful when analytical solutions are difficult or impossible to obtain.
@@ -46,7 +46,7 @@ $$
 I = \int a(x)f(x)\text{d}x
 $$
 
-With the following estimation:
+With the following estimate:
 
 $$
 \hat{I} = \frac{1}{n} \sum_{i=1}^{n} a(x_i)
