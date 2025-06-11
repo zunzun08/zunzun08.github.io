@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Portfolio Updates"
-permalink: Portfolio/2025/06/10/portfolio-website-blog
+permalink: /Portfolio/2025/06/10/portfolio-website-blog
 ---
 
 About a month ago, I graduated from college. 
