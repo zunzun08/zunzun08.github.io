@@ -1,8 +1,7 @@
-
 ---
-layout: page
+layout: default
 title: "Portfolio Updates"
-permalink: https://zunzun08.github.io/_posts/Portfolio/2025-06-10-portfolio-website-blog.md
+permalink: Portfolio/2025/06/10/portfolio-website-blog
 ---
 
 About a month ago, I graduated from college. 
