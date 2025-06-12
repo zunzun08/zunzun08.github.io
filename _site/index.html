@@ -29,33 +29,36 @@
 <body class="bg-blue-500 snap-y snap-mandatory overflow-y-scroll h-screen">
 
 
-    <!-- Navigation Bar-->
-    <div class="flex flex-row text-center text-white mt-5 gap-10">
-        <!-- Navigation Container-->
-        <div class="mx-auto relative px-5 gap-10">
-
-            <!--Navbar Menu-->
-            <nav class="flex gap-5">
-                <a href="index.html">Home</a>
-
-                <a href="#port_exp">Portfolio</a>
-
-                <a href="#blog">Blog</a>
-
-                <a href="#about">About</a>
-            </nav>
-
-        </div>
-
-    </div>
-
-
 
     <!-- Content-->
+
+
+
     <div>
         <!-- Hero Section-->
         <header id="hero"
             class="text-center text-white w-full h-screen snap-start flex flex-col justify-center items-center">
+            <div class="flex flex-row text-center text-white mt-5 gap-10">
+
+
+
+                <!-- Navigation Container-->
+                <div class="mx-auto relative px-5 gap-10">
+
+                    <!--Navbar Menu-->
+                    <nav class="flex gap-5">
+                        <a href="index.html">Home</a>
+
+                        <a href="#port_exp">Portfolio</a>
+
+                        <a href="#blog">Blog</a>
+
+                        <a href="#about">About</a>
+                    </nav>
+
+                </div>
+
+            </div>
 
             <div class="h-screen flex flex-col justify-center items-center px-4 -mt-10">
                 <h1 class="text-4xl font-semibold">Hi, my name is Cristian Compean.</h1>
@@ -101,19 +104,54 @@
 
     <!-- Portfolio_button\Experience Section-->
     <!-- Portfolio/Experience Section -->
+    <div class="md:max-w-screen">
+        <!-- Sticky Left Sidebar -->
 
-
-    <section id="port_exp" class="bg-stone-50 min-h-screen">
-        <div class="md:flex md:gap-4">
+        <section id="main" class="flex bg-stone-50 min-h-screen">
             <!-- Sticky Left Sidebar -->
-            <div class="hidden md:block md:w-1/2">
-                <header class="sticky md:top-0 md:h-screen md:flex md:flex-col md:justify-between md:py-24 md:pl-10">
+
+            <div class="hidden md:block sticky md:top-0 md:float-left md:w-1/2 bg-stone-50 md:h-screen">
+                <header class="md:h-full md:flex md:flex-col md:justify-between md:py-24 md:pl-10">
                     <div>
                         <h1 class="text-6xl font-semibold">Cristian Compean</h1>
                         <p class="text-base font-light mt-5 max-w-xl">
                             Data professional specializaing in machine learning, data science, and data
                             engineering.
                         </p>
+                        <nav class="nav hidden md:block" aria-label="Nav menu">
+                            <ul class="mt-16 w-max">
+                                <li>
+                                    <a class="group flec items-center py-3 active" href="#port_exp">
+                                        <span
+                                            class="nav-indicator mr-4 h-px w-8 bg-gray-300 transition-all group-hover:w-16 group hover:bg-stone-200 group-focus-visible:w-16 group-focus-visibile:bg-slate-200 motion-reduce:transition-non ">
+                                        </span>
+                                        <span
+                                            class="nav-text text-s font-semibold uppercase tracking-widest text-gray-500 group-hover:text-black group-focus-visible:text-gray-500">-
+                                            Portfolio
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="group flec items-center py-3 active" href="#blog">
+                                        <span
+                                            class="nav-indicator mr-4 h-px w-8 bg-gray-300 transition-all group-hover:w-16 group hover:bg-stone-200 group-focus-visible:w-16 group-focus-visibile:bg-slate-200 motion-reduce:transition-non ">
+                                        </span>
+                                        <span
+                                            class="nav-text text-s font-semibold uppercase tracking-widest text-gray-500 group-hover:text-black group-focus-visible:text-gray-500">-
+                                            Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="group flec items-center py-3 active" href="#about">
+                                        <span
+                                            class="nav-indicator mr-4 h-px w-8 bg-gray-300 transition-all group-hover:w-16 group hover:bg-stone-200 group-focus-visible:w-16 group-focus-visibile:bg-slate-200 motion-reduce:transition-non ">
+                                        </span>
+                                        <span
+                                            class="nav-text text-s font-semibold uppercase tracking-widest text-gray-500 group-hover:text-black group-focus-visible:text-gray-500">-
+                                            About
+                                    </a>
+                                </li>
+                            </ul>
                     </div>
 
                     <ul class="flex justify-center gap-5 mt-5">
@@ -136,8 +174,12 @@
                 </header>
             </div>
 
+
+
+
+
             <!-- Right Content Area -->
-            <div id="portfolio-exp-content" class="md:w-1/2 md:pr-8">
+            <div id="portfolio-exp-content" class="flex-1 md:w-1/2 md:pr-8 md:float-right">
                 <!-- Button Container -->
                 <div class="sticky top-0 z-20 mb-4 bg-stone-50 flex border-b border-gray-200">
                     <button id="portfolio_button"
@@ -149,7 +191,6 @@
                         Experience
                     </button>
                 </div>
-
                 <!-- Experience Content -->
                 <div id="experience_content" class="hidden">
                     <div class="space-y-12">
@@ -180,7 +221,8 @@
                                         analysis and statistical analysis on various project metrics (e.g, revenue
                                         generated, hours billed, consultants assigned) to support optimal pricing
                                         strategy decisions.
-                                        Cleaned, updated, and verified data accuracy across various CRM data storages
+                                        Cleaned, updated, and verified data accuracy across various CRM data
+                                        storages
                                         using
                                         Pandas library for Python along with Matplotlib and Seaborn for data
                                         visualization and presentation.
@@ -207,9 +249,6 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <p class="text-gray-500">Add more experience items here</p>
                         </div>
                         <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
                             <p class="text-gray-500">Add more experience items here</p>
@@ -245,7 +284,8 @@
                                     <p class="mt-2 text-sm leading-normal">
                                         Learned some elements of web development and Git (GitHub Pages and version
                                         control) to
-                                        create a personal website where I host my projects, work experience, and blog.
+                                        create a personal website where I host my projects, work experience, and
+                                        blog.
                                         Read more about the different versions of this website and my plans for the
                                         future of
                                         this website!
@@ -289,11 +329,22 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="blog_content">
+                    <div class="sticky top-0 z-20 mb-4 bg-stone-50 flex border-b border-gray-200">
+                        Blog</div>
+
+
+
+
+
+
+
+
+                </div>
             </div>
-            <!--Blog Content-->
-            <div id="">
-            </div>
-    </section>
+
+        </section>
 
 
 
@@ -302,43 +353,43 @@
 
 
 
-    <script>
-        function setActiveButton(activeButtonId) {
-            // Reset both buttons to inactive state
-            document.getElementById('portfolio_button').classList.add('text-gray-500');
-            document.getElementById('portfolio_button').classList.remove('text-black');
-            document.getElementById('experience_button').classList.add('text-gray-500');
-            document.getElementById('experience_button').classList.remove('text-black');
+        <script>
+            function setActiveButton(activeButtonId) {
+                // Reset both buttons to inactive state
+                document.getElementById('portfolio_button').classList.add('text-gray-500');
+                document.getElementById('portfolio_button').classList.remove('text-black');
+                document.getElementById('experience_button').classList.add('text-gray-500');
+                document.getElementById('experience_button').classList.remove('text-black');
 
-            // Activate the clicked button
-            const activeBtn = document.getElementById(activeButtonId);
-            activeBtn.classList.remove('text-gray-500');
-            activeBtn.classList.add('text-black');
-        }
+                // Activate the clicked button
+                const activeBtn = document.getElementById(activeButtonId);
+                activeBtn.classList.remove('text-gray-500');
+                activeBtn.classList.add('text-black');
+            }
 
-        function toggleContent(showId, hideId) {
-            // Toggle content visibility
-            document.getElementById(showId).classList.remove('hidden');
-            document.getElementById(hideId).classList.add('hidden');
+            function toggleContent(showId, hideId) {
+                // Toggle content visibility
+                document.getElementById(showId).classList.remove('hidden');
+                document.getElementById(hideId).classList.add('hidden');
 
-            // Update button states
-            setActiveButton(showId === 'portfolio_content' ? 'portfolio_button' : 'experience_button');
-        }
+                // Update button states
+                setActiveButton(showId === 'portfolio_content' ? 'portfolio_button' : 'experience_button');
+            }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize with portfolio visible
-            toggleContent('portfolio_content', 'experience_content');
-
-            // Set up event listeners
-            document.getElementById('portfolio_button').addEventListener('click', function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                // Initialize with portfolio visible
                 toggleContent('portfolio_content', 'experience_content');
-            });
 
-            document.getElementById('experience_button').addEventListener('click', function () {
-                toggleContent('experience_content', 'portfolio_content');
+                // Set up event listeners
+                document.getElementById('portfolio_button').addEventListener('click', function () {
+                    toggleContent('portfolio_content', 'experience_content');
+                });
+
+                document.getElementById('experience_button').addEventListener('click', function () {
+                    toggleContent('experience_content', 'portfolio_content');
+                });
             });
-        });
-    </script>
+        </script>
 
 
 
