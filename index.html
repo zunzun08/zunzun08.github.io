@@ -103,7 +103,6 @@
 
 
     <!-- Portfolio_button\Experience Section-->
-    <!-- Portfolio/Experience Section -->
     <div class="md:max-w-screen">
         <!-- Sticky Left Sidebar -->
 
@@ -183,11 +182,11 @@
                 <!-- Button Container -->
                 <div class="sticky top-0 z-20 mb-4 bg-stone-50 flex border-b border-gray-200">
                     <button id="portfolio_button"
-                        class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-sm font-semibold text-black">
+                        class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-m font-semibold text-black uppercase tracking-widest">
                         Portfolio
                     </button>
                     <button id="experience_button"
-                        class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-sm font-semibold text-gray-500">
+                        class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-m font-semibold text-gray-500 uppercase tracking-widest">
                         Experience
                     </button>
                 </div>
@@ -330,20 +329,93 @@
                     </div>
                 </div>
 
-                <div id="blog_content">
+
+
+
+                <!--Blog sticky header-->
+                <div id="blog_header">
                     <div class="sticky top-0 z-20 mb-4 bg-stone-50 flex border-b border-gray-200">
-                        Blog</div>
+                        <h3 class=" justify-center py-4 px-4 text-m font-semibold text-black uppercase tracking-widest">
+                            Blog</h3>
+                    </div>
+                </div>
 
+                <div id="blog_content">
+                    <div class="space-y-12">
+                        <div class="group relative p-6 rounded-lg transition-all hover:bg-gray-50">
+                            <div class="flex flex-col lg:flex-row lg:gap-8">
+                                <header class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
+                                    Jan 2025 - May 2025
+                                </header>
+                                <div class="lg:w-2/3">
+                                    <h3 class="font-medium leading-snug text-black">
+                                        <a class="text-black inline-flex items-baseline font-medium leading-tight hover:text-blue-600 focus-visible:text-black group/link text-base"
+                                            href="Sampling/2025/05/28/sampling" target="_blank"
+                                            rel="noreferrer noopener" aria-label="Website Update Links">
+                                            <span>Sampling and the Overlap Measure
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                    fill="currentColor" class="inline-block h-4 w-4 shrink-0 ml-1"
+                                                    aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal">
+                                        A detailed look into different sampling algorithms designed to build intuition
+                                        over the
+                                        idea
+                                        of
+                                        distributional similarity. The measure of distributional similarity that's built
+                                        up to
+                                        in
+                                        this
+                                        deep dive is the Overlap measure. The overlap measure tells us given two
+                                        individuals
+                                        drawn
+                                        from
+                                        distinct distributions, how likely is it that we can replace one with the other?
+                                        The
+                                        order
+                                        in
+                                        which we arrive at these ideas is sequential and we observe that regardless of
+                                        its
+                                        complexity,
+                                        sampling algorithms have to use some measure of distributional similarity to
+                                        work.
+                                    </p>
+                                    <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
+                                        <li class="mr-1.5 mt-2">
+                                            <div
+                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                Bayesian Statistics
+                                            </div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div
+                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                Python
+                                            </div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div
+                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                Data Visualization
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-
-
-
-
-
-
+                        <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <p class="text-gray-500">Add blog items here</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </section>
 
 
