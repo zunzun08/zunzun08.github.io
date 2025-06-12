@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Rejection Sampling
-permalink: /2025/05/19/rejection-sampling
+permalink: docs/Sampling/2025/05/19/rejection-sampling
 parent: Sampling
 nav_order: 1
 ---
