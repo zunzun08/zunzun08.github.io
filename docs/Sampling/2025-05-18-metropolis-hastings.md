@@ -5,7 +5,6 @@ permalink: /docs/Sampling/2025/05/18/Metropolis-Hastings
 parent: Sampling
 nav_order: 2
 ---
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script type="text/x-mathjax-config">
@@ -22,7 +21,7 @@ nav_order: 2
 #  The Metropolis-Hastings Algorithm
 
 ## Introduction
-The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) method that allows us to generate samples from a target distribution. A target distribution is a function whose form is known but whose constant of proportionality is unknown and/or cannot be calculated through traditional methods or numerical methods. Because the constant of proportionality cannot be calculated, traditional methods of sampling such as the inverse CDF method cannot be applied. We'll assume the rejection sampling method does not work here for our proposal and target distributions. Instead, we turn to the Metropolis Hastings algorithm which works by also works by an iterative process. The Metropolis Hastings algorithm draws samples from a proposal probability density function and based on an overlap measure, the sample is accepted or rejected. After some number of iterations, the samples accepted by MH algorithm follow target distribution, without ever calculating the constant of integration. 
+The Metropolis-Hastings (MH) algorithm is a Monte Carlo Markov Chain (MCMC) method that allows us to generate samples from a target distribution. A target distribution is a function whose form is known but whose constant of proportionality is unknown and/or cannot be calculated through traditional methods or numerical methods. Because the constant of proportionality cannot be calculated, traditional methods of sampling such as the inverse CDF method cannot be applied. We'll assume that the rejection sampling method does not work here for our proposal and target distributions. Instead, we turn to the Metropolis Hastings algorithm which works by also works by an iterative process. The Metropolis Hastings algorithm draws samples from a proposal probability density function and based on an overlap measure, the sample is accepted or rejected. After some number of iterations, the samples accepted by the MH algorithm follow the target distribution without ever having to  calculate the constant of integration. 
 
 ### Example
 Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution that is easy to sample from and $q(x)$ is difficult to sample from. By applying the MH Algorithm 10,000 times, and only sampling from $p(x)$, we can achieve the following result:
@@ -33,21 +32,21 @@ Suppose $q(x) \sim N(0,1)$ and $p(x) \sim N(1,2)$ where $p(x)$ is a distribution
   </video>
 </p>
 
-Effectively, samples from $p(x)$ and concluding that they are accepted as approximations of $q(x)$.
+Effectively, samples from $p(x)$ and conclude that they are accepted as approximations of $q(x)$.
 
 ## Mathematical Background
-Before formally defining the Metropolis Hastings, I'd like to recall or introduce a few concepts the reader should be familiar with to understand the proof of the Metropolis-Hastings Algorithm.
+Before formally defining the MH algorithm, I'd like to recall or introduce a few concepts that the reader should be familiar with to understand the proof of the MH algorithm.
 
 ### Monte Carlo
 Monte Carlo methods are a class of computational techniques that use random sampling to approximate mathematical quantities, such as integrals. These methods are useful when analytical solutions are difficult or impossible to obtain.
 
-Given a probability density function $f(x)$ and independently and identically distributed (i.i.d) samples $x_1, x_2, ..., x_n$ from $f(x)$, we can approximate the integral of a continuous function $a(x)$ with respect to $f(x)$:
+Given a probability density function $f(x)$ and independently and identically distributed (i.i.d) samples $X_1, X_2, ..., X_n$ from $f(x)$, we can approximate the integral of a continuous function $a(x)$ with respect to $f(x)$:
 
 $$
 I = \int a(x)f(x)\text{d}x
 $$
 
-With the following estimation:
+With the following estimate:
 
 $$
 \hat{I} = \frac{1}{n} \sum_{i=1}^{n} a(x_i)
@@ -70,7 +69,7 @@ $$
 \text{E}[\hat{I}] = \text{E}[\frac{1}{n} \sum_{i=1}^n a(x_i)] = \frac{1}{n} \sum_{i=1}^n \text{E}[a(x_i)]
 $$
 
-Since $x_1, x_2, ..., x_n$ are i.i.d
+Since $X_1, X_2, ..., X_n$ are i.i.d
 
 $$
 \text{E}[\hat{I}] = \frac{1}{n} (nI) = I = \text{E}[a(x)]
@@ -99,28 +98,28 @@ A Markov chain is a stochastic process where the future state depends only on th
 
 The MC Stationary property requires the following:
 1. A p.d.f: $f(x)$
-2. An i.i.d sample $x_1, x_2, ..., x_n$ drawn from $\Pr(\cdot | x_{i-1})$, the transition kernel from the previous state, $x_{i-1}$.
+2. An i.i.d sample $X_1, X_2, ..., X_n$ drawn from $\Pr(\cdot \vert x_{i-1})$, the transition kernel from the previous state, $x_{i-1}$.
 3. The stationary distribution must satisfy the following process: 
 
 $$
 f(y) = \int \Pr(y \vert x) f(x) \text{dx}
 $$
 
-If all three conditions are met then the following is true:
+If all three conditions are met, then the following is true:
 
-If the initial state $x_1$,​ is drawn from the stationary distribution $f(x)$, and each subsequent state $x_{i+1}$ is drawn from $\Pr⁡(⋅\vert x_i)$, then all states $x_i$ will also follow the stationary distribution $f(x)$. 
+If the initial state $X_1$,​ is drawn from the stationary distribution $f(x)$, and each subsequent state $X_{i+1}$ is drawn from $\Pr⁡(⋅\vert x_i)$, then all states $X_i$ will also follow the stationary distribution $f(x)$. 
 
 ## Markov Chain Monte Carlo
 
-Markov Chain Monte Carlo (MCMC) methods combine Monte Carlo sampling with Markov chains to generate samples from a target probability distribution $`f(x)`$.
+Markov Chain Monte Carlo (MCMC) methods combine Monte Carlo sampling with Markov chains to generate samples from a target probability distribution $f(x)$.
 
-Given a sequence of samples $x_1,x_2,…,x_n$ generated by an ergodic Markov chain with stationary distribution $`f(x)`$, we can approximate expectations of a function $`a(x)`$ as follows:
+Given a sequence of samples $X_1,X_2,…,X_n$ generated by an ergodic Markov chain with stationary distribution $f(x)$, we can approximate expectations of a function $a(x)$ as follows:
 
 $$
 \mathbb{E}_f[a(x)] \approx \frac{1}{n} \sum_{i=1}^n a(x_i)
 $$
 
-This approximation holds under the condition that the Markov chain will eventually produce samples that are distributed according to $`f(x)`$, even if the samples are not independent.
+This approximation holds under the condition that the Markov chain will eventually produce samples that are distributed according to $f(x)$, even if the samples are not independent.
 
 By the definition above and the description above, the MH algorithm is an MCMC method.
 
@@ -146,15 +145,15 @@ $\alpha(x', x) = \min(1, \frac{p(x')q(x|x')}{p(x)q(x'|x)})$</li>
 
 ## Proof of Metropolis Hastings Algorithm
 From the algorithm we know applying the MH Algorithm does the following:
-
 <p align="center">
  <img src="/assets/metropolis-movement.png" alt="MH Movement" width="400" />
-</p>
+ </p>
+
 
 The algorithm implies that for any $X_i$ and $X_{i+1}$ for $1 \leq i \leq n$ there must be a density $\Pr(X_{i+1} \vert X_i)$ that facilitates the movement of random variables.
 
-We also wish to prove $q(X_{i+1}) = \int \Pr(X_{i+1} | X_{i}) q(X_{i}) dX_{i}$ which is the stationary condition for our target distribution.
-However, we first need to find $\Pr(x_{n+1} | x_n)$ is before we can show the stationary condition holds.
+We also wish to prove $q(X_{i+1}) = \int \Pr(X_{i+1} \vert X_{i}) q(X_{i}) dX_{i}$ which is the stationary condition for our target distribution.
+However, we first need to find $\Pr(x_{n+1} \vert x_n)$ is before we can show the stationary condition holds.
 
 
 ### Finding $\Pr(X_{n+1} \vert X_n)$:
@@ -225,9 +224,12 @@ $$\Pr(x'|x_n)q(x_n)= \min ( q(x_n)p(x'|x_n),q(x')p(x_n|x'))$$
 
 $$\Rightarrow \Pr(x'|x_n)q(x_n) = \Pr(x_n|x')q(x')$$
 
-Thus, the Metropolis Hastings Algorithm satisfies detailed balance.
-We can integrate both sides w.r.t $x_n$ and find:
+The Metropolis Hastings Algorithm satisfies detailed balance.
+
+Finally, we can integrate both sides w.r.t $x_n$ and find:
+
 $$q(x') = \int \Pr(x' |x_n)q(x_n)dx_n$$
+
 $$\Rightarrow
 q(x_{n+1}) = \int \Pr(x_{n+1} |x_n)q(x_n)dx_n
 $$

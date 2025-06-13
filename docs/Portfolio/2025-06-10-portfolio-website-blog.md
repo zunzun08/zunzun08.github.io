@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Portfolio Updates"
+title: Portfolio Updates
 permalink: /Portfolio/2025/06/10/portfolio-website-blog
 ---
 
@@ -9,9 +9,8 @@ permalink: /Portfolio/2025/06/10/portfolio-website-blog
   overflow: auto;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  gap: 1rem;
-  padding: 1rem 0; 
+  gap: 2rem;
+  padding: 2rem 0; 
 }
 .slide-container > * {
     scroll-snap-align: center;
@@ -20,9 +19,6 @@ permalink: /Portfolio/2025/06/10/portfolio-website-blog
     vertical-align: top;
     text-align: center;
     padding: 10px;
-}
-.slide-container::-webkit-scrollbar {
-    display:none;
 }
 
 .slide-container img {
@@ -75,6 +71,6 @@ I finally got everything to work properly. YAY! I should be done and ready to pr
 
 I wake up one morning and realize, I hate everything about this website. It's hard to scale, it looks out of date, and it doesn't render properly on mobile. So, like any rational person would decide, I delete everything and start from scratch. This time I look for inspiration from other creators on Reddit and I find different layouts I really love. This time, I decide to use TailwindCSS as a modern framework for the page and start from a mobile first approach. And that leads us to today June 6th, 2025 where I'm currently updating my page and slowly adding back all the content from v3!
 <div class="slide-container" align="center">
-    <img src="/assets/homepage(v4).png" width="400">
-    <img src="/assets/home_pt2(v4).png" width="400">
+    <img src="/assets/homepage(v4).png" id="v4_first" width="1000" height="600">
+    <img src="/assets/home_pt2(v4).png" id="v4_second" width="1000" height="600">
 </div>
