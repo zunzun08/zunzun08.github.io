@@ -1,17 +1,32 @@
 <style>
+<<<<<<< HEAD
 
 .slide-container {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
  -webkit-overflow-scrolling
+=======
+.slide-container {
+  overflow: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+>>>>>>> f1799d3 (I think I broke something)
   gap: 2rem;
   padding: 2rem 0; 
 }
 .slide-container > * {
     scroll-snap-align: center;
+<<<<<<< HEAD
     flex: 0 0 90%;
     min-width: 0;
+=======
+    display: inline-block;
+    width: 90%;
+    vertical-align: top;
+    text-align: center;
+    padding: 10px;
+>>>>>>> f1799d3 (I think I broke something)
 }
 
 .slide-container img {
