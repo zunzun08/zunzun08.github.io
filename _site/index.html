@@ -120,7 +120,7 @@
                         <nav class="nav hidden md:block" aria-label="Nav menu">
                             <ul class="mt-16 w-max">
                                 <li>
-                                    <a class="group flec items-center py-3 active" href="#portfolio-exp">
+                                    <a class="group flec items-center py-3 active" href="#portfolio-exp-content">
                                         <span
                                             class="nav-indicator mr-4 h-px w-8 bg-gray-300 transition-all group-hover:w-16 group hover:bg-stone-200 group-focus-visible:w-16 group-focus-visibile:bg-slate-200 motion-reduce:transition-non ">
                                         </span>
@@ -236,6 +236,12 @@
                                         <li class="mr-1.5 mt-2">
                                             <div
                                                 class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                SQL
+                                            </div>
+                                        </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div
+                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
                                                 Snowflake
                                             </div>
                                         </li>
@@ -245,12 +251,15 @@
                                                 Tableau
                                             </div>
                                         </li>
+                                        <li class="mr-1.5 mt-2">
+                                            <div
+                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                Salesforce
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <p class="text-gray-500">Add more experience items here</p>
                         </div>
                     </div>
                 </div>
@@ -320,13 +329,70 @@
                         </div>
 
                         <!-- Add more portfolio items here to see scrolling effect -->
-                        <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <p class="text-gray-500">Add more portfolio items here</p>
-                        </div>
-                        <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <p class="text-gray-500">Add more portfolio items here</p>
+                        <div class="flex flex-col lg:flex-row lg:gap-8">
+                            <header class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
+                                <!-- Date can be added here if needed -->
+                            </header>
+
+                            <div class="lg:w-2/3">
+                                <h3 class="font-medium leading-snug text-black">
+                                    <a class="text-black inline-flex items-baseline font-medium leading-tight hover:text-blue-600 focus-visible:text-black group/link text-base"
+                                        target="_blank" rel="noreferrer noopener" aria-label="Website Update Links">
+                                        <span>Overlap Measure, An Alternative Approach to p-values for Experiment
+                                            Comparisons: RAND HIE
+                                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" class="inline-block h-4 w-4 shrink-0 ml-1"
+                                                aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg> -->
+                                        </span>
+                                    </a>
+                                </h3>
+                                <p class="mt-2 text-sm leading-normal">
+                                    The RAND HIE(1971-1986), often cited against universal healthcare, showed negligible
+                                    health impacts of free comprehensive insurance. Our analysis of its mental health
+                                    data finds a key contrast:
+                                    p-values show no significant average difference between insurance groups, but the
+                                    overlap measure reveals more individuals changed mental health behavior under
+                                    comprehensive
+                                    coverage. This challenges simplistic dismissals of coverage benefits.
+
+                                </p>
+                                <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
+                                    <li class="mr-1.5 mt-2">
+                                        <div
+                                            class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                            Statistics
+                                        </div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div
+                                            class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                            Python
+                                        </div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div
+                                            class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                            Seaborn
+                                        </div>
+                                    </li>
+                                    <li class="mr-1.5 mt-2">
+                                        <div
+                                            class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                            Pandas
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
+                        <p class="text-gray-500">Add more portfolio items here</p>
+                    </div> -->
                 </div>
 
 
@@ -410,9 +476,9 @@
                             </div>
                         </div>
 
-                        <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <p class="text-gray-500">Add blog items here</p>
-                        </div>
+                        <!-- <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center"> -->
+                        <!-- <p class="text-gray-500">Add blog items here</p> -->
+                        <!-- </div> -->
                     </div>
                 </div>
                 <div id="about_content">
