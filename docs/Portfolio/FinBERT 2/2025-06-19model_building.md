@@ -1,3 +1,12 @@
+---
+layout: default
+title: FinBERT 2: Model Building
+permalink: /docs/Portfolio/FinBERT_2/Model_building
+parent: FinBERT 2
+---
+
+
+
 # Introduction to Sentiment Analysis
 
 Sentiment analysis is the popular classification technique of determining attidues around a subject, entity, or event from natural language. The method and techniques of implementing sentiment analysis are long and well-documented from "simple" and inuitive models such as logistic regression and Naive Bayes Classifier and training models using a collection of vocabulary words (Bag of Words) to highly sophisticated and state of the art large language/reasoning models such as GPT-4, o4, BERT, Claude Opus 4 trained on large corpus of text throught the use of embeding layers that preserve word order, sentiment analysis seems to be a persistent and well researched topic surrounding these forementioned methods of prediction.

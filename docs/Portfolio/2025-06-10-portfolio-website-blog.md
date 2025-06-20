@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Portfolio Updates
+title: Portfolio Website Updates
 permalink: /Portfolio/2025/06/10/portfolio-website-blog
 ---
 
