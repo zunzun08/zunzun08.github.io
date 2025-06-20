@@ -16,9 +16,13 @@ I was asked by a friend who has been working on building his expertise in the wo
 - Store the trained Large Language Model for quick prediction, one off prediction
 
 Here's the system I ultimately developed:
-[Place Image Here]
-
+<p align="center">
+<img src="/assets/system_architecture (v1).png">
+</p>
 The construction of the system will be seperated into three parts including:
-[Model Building]
+
+[Model Building](https://zunzun08.github.io/docs/Portfolio/FinBERT_2/model_building)
+
 [Scraper Development]
+
 [Database and pipeline Development]

@@ -174,22 +174,22 @@
     
     "relUrl": "/Portfolio/2025/06/10/portfolio-website-blog"
   },"25": {
-    "doc": "Application - Overlap Measure and RAND HIE",
+    "doc": "Application - Overlap Measure and RAND HIE (WIP)",
     "title": "Introduction",
     "content": "The overlap measure provides us a way to conceretly measure changes between a population before and after a treatment. What makes the overlap measure so powerful is that it is a method of comparison between populations without the use of a p-value that also gives a value of the percent of individuals who change after having a treatment applied. Overlap, therefore, does not suffer from the same downsides as the p-value, mainly Overlap is not: . | Vulnerable to p-hacking | A probability that can be proven to be false | . While I do not believe the overlap measure should be a direct replacement of the p-value, nor do I believe that was the purpose of the incepetion of the overlap measure; by removing the p-value from our statisical analysis we force ourselves to recreate the strength of the validity “statistically significant”results have with a far more data driven approach. The overlap merely carries with it a numerical ouput of the distirbutional similiarity between the before and after treatment distributions. The goal of this article is thus a practical application of the overlap measure and discovering insights into datasets where the p-value dound results that were not statistically significant but individuals who underwent a treatment did still behave differently than they did before the treatment. ",
     "url": "/docs/Portfolio/Overlap_RANDHIE#introduction",
     
     "relUrl": "/docs/Portfolio/Overlap_RANDHIE#introduction"
   },"26": {
-    "doc": "Application - Overlap Measure and RAND HIE",
+    "doc": "Application - Overlap Measure and RAND HIE (WIP)",
     "title": "Introduction to RAND HIE",
     "content": " ",
     "url": "/docs/Portfolio/Overlap_RANDHIE#introduction-to-rand-hie",
     
     "relUrl": "/docs/Portfolio/Overlap_RANDHIE#introduction-to-rand-hie"
   },"27": {
-    "doc": "Application - Overlap Measure and RAND HIE",
-    "title": "Application - Overlap Measure and RAND HIE",
+    "doc": "Application - Overlap Measure and RAND HIE (WIP)",
+    "title": "Application - Overlap Measure and RAND HIE (WIP)",
     "content": "Prerequisite: Overlap Measure . ",
     "url": "/docs/Portfolio/Overlap_RANDHIE",
     
@@ -197,7 +197,7 @@
   },"28": {
     "doc": "FinBERT 2",
     "title": "Introduction",
-    "content": "I was asked by a friend who has been working on building his expertise in the world of quantitative trading to build a sentiment analysis model to quickly quantify the sentiment of recent, relevant financial news articles of specific publicly traded companies as a component for a portfolio he was looking to build and manage. I agreed and began to build an end to end system that was capable of the following: . | Injest news articles from major American news sources along with news aggregators for sentiment on general, daily, stock market sentiment | Store data obtained from web crawling, model training, and model predictions | Store the trained Large Language Model for quick prediction, one off prediction | . Here’s the system I ultimately developed: [Place Image Here] . The construction of the system will be seperated into three parts including: [Model Building] [Scraper Development] [Database and pipeline Development] . ",
+    "content": "I was asked by a friend who has been working on building his expertise in the world of quantitative trading to build a sentiment analysis model to quickly quantify the sentiment of recent, relevant financial news articles of specific publicly traded companies as a component for a portfolio he was looking to build and manage. I agreed and began to build an end to end system that was capable of the following: . | Injest news articles from major American news sources along with news aggregators for sentiment on general, daily, stock market sentiment | Store data obtained from web crawling, model training, and model predictions | Store the trained Large Language Model for quick prediction, one off prediction | . Here’s the system I ultimately developed: . The construction of the system will be seperated into three parts including: . Model Building . [Scraper Development] . [Database and pipeline Development] . ",
     "url": "/docs/Portfolio/FinBERT_2#introduction",
     
     "relUrl": "/docs/Portfolio/FinBERT_2#introduction"
@@ -209,46 +209,53 @@
     
     "relUrl": "/docs/Portfolio/FinBERT_2"
   },"30": {
-    "doc": "Introduction to Sentiment Analysis",
+    "doc": "FinBERT 2 - Model Building",
     "title": "Introduction to Sentiment Analysis",
     "content": "Sentiment analysis is the popular classification technique of determining attidues around a subject, entity, or event from natural language. The method and techniques of implementing sentiment analysis are long and well-documented from “simple” and inuitive models such as logistic regression and Naive Bayes Classifier and training models using a collection of vocabulary words (Bag of Words) to highly sophisticated and state of the art large language/reasoning models such as GPT-4, o4, BERT, Claude Opus 4 trained on large corpus of text throught the use of embeding layers that preserve word order, sentiment analysis seems to be a persistent and well researched topic surrounding these forementioned methods of prediction. Sentiment Analysis Using BERT . Improvements in the sophistication of models with the rise of attention based architecture have significantly improved performance of sentiment analysis over previous models such as recurrent neural networks or convolution neural networks due to the positional embeddings the model learns through pre-training and transformers ability to process whole sentences rather than word for word. The downside to the transformer model is its use of massive datasets and heavy computation costs. However, we overcome the limitation of pretraining BERT on the standard Wikipedia and Book corpora by using the pretrained BERT from the Huggingface library. Further Pretraining = Improved Results? . Text in financial data is notoriously tricky to detect sentiment due to the unique vocabulary and the lack of proper and labeled data make applying sentiment analysis difficult. This is where FinBERT comes in. FinBERT is a variation of BERT desinged specifically for application in the financial domain by using a method known as “further pre-training” which is training a BERT model on domain relevant corpa using the same training methods (masked language modeling and next sentence prediction) done during the training on the Wikipedia and BookCourpa corpora. The authors of FinBERT decided to use Reuters TRC2 dataset and then filtering down to financial news articles for the pretraining of BERT; the idea of the pretraining is that it allows BERT to adjust its positional embeddings before it is fine-tuned on domain-specific dataset. After pretraining, FinBERT was then fine-tuned on the Financial Phrasebank dataset where it proved noticeable improvements over a standard BERT, ELmO, and (I forgot the last one). The result of this further pretraining demostrated the effectiveness and possibility of making better, domain-specific models for the purpose of sentiment analysis. ",
-    "url": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html",
+    "url": "/docs/Portfolio/FinBERT_2/model_building#introduction-to-sentiment-analysis",
     
-    "relUrl": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html"
+    "relUrl": "/docs/Portfolio/FinBERT_2/model_building#introduction-to-sentiment-analysis"
   },"31": {
-    "doc": "Introduction to Sentiment Analysis",
+    "doc": "FinBERT 2 - Model Building",
     "title": "Why FinBERT 2?",
     "content": "The original FinBERT model was made in 2019. Since then with a substantial rise of retail investors [link here], the COVID-19 pandemic, and the impact of Artifical Intelligence, rising interest rates have made both changes in the way we communicate and the way markets, particularly stock markets, operate in higher volatility enviroment. It is my personal belief that the change in enviroment should be reflected in the data we use to train our LLMs, this to me, is particularly important when it comes to training LLMs on domain specific tasks. For that reason, the data we collect and use to train FinBERT 2 should reflect my sentiment. Ideally, we want a LLM that is knowledgeable on financial vocabulary and news but is also an excellent room reader and can understand the anger/frustration/skepticism traders may have towards a stock. ",
-    "url": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#why-finbert-2",
+    "url": "/docs/Portfolio/FinBERT_2/model_building#why-finbert-2",
     
-    "relUrl": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#why-finbert-2"
+    "relUrl": "/docs/Portfolio/FinBERT_2/model_building#why-finbert-2"
   },"32": {
-    "doc": "Introduction to Sentiment Analysis",
+    "doc": "FinBERT 2 - Model Building",
     "title": "Collecting Datasets",
     "content": " ",
-    "url": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#collecting-datasets",
+    "url": "/docs/Portfolio/FinBERT_2/model_building#collecting-datasets",
     
-    "relUrl": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#collecting-datasets"
+    "relUrl": "/docs/Portfolio/FinBERT_2/model_building#collecting-datasets"
   },"33": {
-    "doc": "Introduction to Sentiment Analysis",
+    "doc": "FinBERT 2 - Model Building",
     "title": "Model Training and Data Colletion",
     "content": "For the pretraining, we’ll be using Huggingface extensively as it offers a variety of benefits when it comes to training LLMs. Using HuggingFace gives us access to a variety of large datasets perfect for training LLMs and are easy to access using the HuggingFace API in Python. HuggingFace also allows for me store up to 100gb that can be used to store tokenized datasets so they don’t have to be loaded in locally. Most importantly, as noted earlier, HuggingFace provides easy access to the BERT model that is already pretrained on the Wikipedia and BookCorpus corpora along with the functions necessary to carry out the further pretraining. ",
-    "url": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#model-training-and-data-colletion",
+    "url": "/docs/Portfolio/FinBERT_2/model_building#model-training-and-data-colletion",
     
-    "relUrl": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#model-training-and-data-colletion"
+    "relUrl": "/docs/Portfolio/FinBERT_2/model_building#model-training-and-data-colletion"
   },"34": {
-    "doc": "Introduction to Sentiment Analysis",
+    "doc": "FinBERT 2 - Model Building",
     "title": "Data Accessing",
     "content": "To access the Huggingface datasets, we’ll be using PySpark over popular alternatives such as Pandas. The reason for this is that if we wanted to increase the number of datasets to manage, PySpark would easily be able to handle the processing and loading required by the data. ",
-    "url": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#data-accessing",
+    "url": "/docs/Portfolio/FinBERT_2/model_building#data-accessing",
     
-    "relUrl": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#data-accessing"
+    "relUrl": "/docs/Portfolio/FinBERT_2/model_building#data-accessing"
   },"35": {
-    "doc": "Introduction to Sentiment Analysis",
+    "doc": "FinBERT 2 - Model Building",
     "title": "Data Collection",
     "content": "For further pretraining, the two datasets we’ll look to use are the Reuteurs Financial Dataset that records Reuteurs Financial news artciles from 2006-2013 and this corpora of Financial News Articles from seemingly 2017-2018. Finally, we’ll use the FinTwit dataset. ",
-    "url": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#data-collection",
+    "url": "/docs/Portfolio/FinBERT_2/model_building#data-collection",
     
-    "relUrl": "/docs/Portfolio/FinBERT%202/2025-06-19model_building.html#data-collection"
+    "relUrl": "/docs/Portfolio/FinBERT_2/model_building#data-collection"
+  },"36": {
+    "doc": "FinBERT 2 - Model Building",
+    "title": "FinBERT 2 - Model Building",
+    "content": " ",
+    "url": "/docs/Portfolio/FinBERT_2/model_building",
+    
+    "relUrl": "/docs/Portfolio/FinBERT_2/model_building"
   }
 }

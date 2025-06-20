@@ -1,7 +1,7 @@
 ---
 layout: default
-title: FinBERT 2: Model Building
-permalink: /docs/Portfolio/FinBERT_2/Model_building
+title: FinBERT 2 - Model Building
+permalink: /docs/Portfolio/FinBERT_2/model_building
 parent: FinBERT 2
 ---
 
