@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Application - Overlap Measure and RAND HIE
+title: Application - Overlap Measure and RAND HIE (WIP)
 permalink: /docs/Portfolio/Overlap_RANDHIE
 ---
 

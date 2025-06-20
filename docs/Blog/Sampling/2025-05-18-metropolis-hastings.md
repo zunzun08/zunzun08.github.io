@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Metropolis-Hastings Algorithm"
-permalink: /docs/Sampling/2025/05/18/Metropolis-Hastings
+permalink: /docs/Blog/Sampling/2025/05/18/Metropolis-Hastings
 parent: Sampling
 nav_order: 2
 ---
