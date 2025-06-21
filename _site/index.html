@@ -34,67 +34,65 @@
 
 
 
-    <div>
-        <!-- Hero Section-->
-        <header id="hero"
-            class="text-center text-white w-full h-screen snap-start flex flex-col justify-center items-center">
-            <div class="flex flex-row text-center text-white mt-5 gap-10">
+    <!-- Hero Section-->
+    <header id="hero"
+        class="text-center text-white w-full h-screen snap-start flex flex-col justify-center items-center">
+        <div class="flex flex-row text-center text-white mt-5 gap-10">
 
 
 
-                <!-- Navigation Container-->
-                <div class="mx-auto relative px-5 gap-10">
+            <!-- Navigation Container-->
+            <div class="mx-auto relative px-5 gap-10">
 
-                    <!--Navbar Menu-->
-                    <nav class="flex gap-5 x-lg:text-3xl">
-                        <a href="index.html">Home</a>
+                <!--Navbar Menu-->
+                <nav class="flex gap-5 x-lg:text-3xl">
+                    <a href="index.html">Home</a>
 
-                        <a href="#portfolio-exp-content">Portfolio</a>
+                    <a href="#portfolio-exp-content">Portfolio</a>
 
-                        <a href="#blog-content">Blog</a>
+                    <a href="#blog-content">Blog</a>
 
-                        <a href="#about-content">About</a>
-                    </nav>
-
-                </div>
+                    <a href="#about-content">About</a>
+                </nav>
 
             </div>
 
-            <div class="h-screen flex flex-col justify-center items-center px-4 -mt-10">
-                <h1 class="text-4xl font-semibold x-lg:text-6xl">Hi, my name is Cristian Compean.</h1>
-                <p class="text-base font-light mt-5 max-w-xl x-lg:text-3xl x-lg:p-4">
-                    I'm a data professional with specializations in machine learning, data science, and data
-                    engineering.
-                </p>
+        </div>
 
-                <ul class="flex justify-center gap-5 mt-5 x-lg:text-3xl">
-                    <li>
-                        <a href="https://linkedin.com/in/cristianzcompean" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/zunzun08" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:czompean@utexas.edu" aria-label="Email">
-                            <i class="fa-solid fa-envelope fa-2x"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="h-screen flex flex-col justify-center items-center px-4 -mt-10">
+            <h1 class="text-4xl font-semibold x-lg:text-6xl">Hi, my name is Cristian Compean.</h1>
+            <p class="text-base font-light mt-5 max-w-xl x-lg:text-3xl x-lg:p-4">
+                I'm a data professional with specializations in machine learning, data science, and data
+                engineering.
+            </p>
 
-            <a href="#about" class="flex flex-col items-center absolute bottom-5 inset-x-1/2 x-lg:p-2">
-                <a class="text-m x-lg:text-3xl" href="#main">Scroll Down</a>
-                <svg class="w-5 h-5 text-white animate-bounce x-lg:w-10 x-lg:h-10" fill="none" stroke="currentColor"
-                    stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </a>
-        </header>
-    </div>
+            <ul class="flex justify-center gap-5 mt-5 x-lg:text-3xl">
+                <li>
+                    <a href="https://linkedin.com/in/cristianzcompean" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/zunzun08" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:czompean@utexas.edu" aria-label="Email">
+                        <i class="fa-solid fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <a href="#about" class="flex flex-col items-center absolute bottom-5 inset-x-1/2 x-lg:p-2">
+            <a class="text-m x-lg:text-3xl" href="#main">Scroll Down</a>
+            <svg class="w-5 h-5 text-white animate-bounce x-lg:w-10 x-lg:h-10" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </a>
+    </header>
 
 
 
@@ -103,13 +101,13 @@
 
 
     <!-- Portfolio_button\Experience Section-->
-    <div class="md:max-w-screen">
+    <section class="md:max-w-screen" id="second-main">
         <!-- Sticky Left Sidebar -->
 
-        <section id="main" class="flex bg-stone-50 min-h-screen">
+        <section id="content" class="flex bg-stone-50 min-h-screen">
             <!-- Sticky Left Sidebar -->
 
-            <div class="hidden md:block sticky md:top-0 md:w-2/5 bg-stone-50 md:h-screen xl:">
+            <div class="hidden md:block sticky md:top-0 md:w-2/5 bg-stone-50 md:h-screen">
                 <header class="md:h-full md:flex md:flex-col md:justify-around md:py-24 md:pl-10">
                     <div>
                         <h1 class="text-6xl font-bold">Cristian Compean</h1>
@@ -179,100 +177,113 @@
 
 
             <!-- Right Content Area -->
-            <section id="portfolio-exp-content" class="flex-1 md:w-1/2 md:pr-8 md:float-right x-lg:flex-grow">
+            <div id="right-content" class="flex-1 md:w-1/2 md:pr-8 md:float-right x-lg:flex-grow">
 
                 <!-- Button Container/Header -->
-                <div id="portfolio-exp-header"
+                <div id="portfolio-exp"
                     class="sticky top-0 z-20 mb-4 bg-stone-50 flex border-b border-gray-200 overflow-y-scroll">
-                    <button id="portfolio_button"
+                    <button id="portfolio-button"
                         class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-m font-semibold text-black uppercase tracking-widest hover:bg-stone-200 hover:text-black">
                         Portfolio
                     </button>
-                    <button id="experience_button"
+                    <button id="experience-button"
                         class="cursor-pointer flex-1 py-4 px-4 focus:outline-none transition-all duration-200 text-m font-semibold text-gray-500 uppercase tracking-widest hover:bg-stone-200 hover:text-black">
                         Experience
                     </button>
                 </div>
-                <!-- Experience Content -->
-                <section id="experience_content">
-                    <div class="space-y-12">
-                        <div class="group relative p-6 rounded-lg transition-all hover:bg-stone-200 cursor-pointer">
-                            <div class="flex flex-col lg:flex-row lg:gap-8">
-                                <header class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
-                                    June 2024 - Jan 2025
-                                </header>
 
-                                <div class="lg:w-2/3">
-                                    <h3 class="font-medium leading-snug text-black">
-                                        <a class="text-black inline-flex items-baseline font-medium leading-tight hover:text-blue-600 focus-visible:text-black group/link text-base"
-                                            href="https://www.embarkwithus.com" target="_blank"
-                                            rel="noreferrer noopener" aria-label="Data Science Intern (Embark)">
-                                            <span>Data Science Intern - Embark
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                    fill="currentColor" class="inline-block h-4 w-4 shrink-0 ml-1"
-                                                    aria-hidden="true">
-                                                    <path fill-rule="evenodd"
-                                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">
-                                        Supported data operations for the growth team by conducting exploratory data
-                                        analysis and statistical analysis on various project metrics (e.g, revenue
-                                        generated, hours billed, consultants assigned) to support optimal pricing
-                                        strategy decisions.
-                                        Cleaned, updated, and verified data accuracy across various CRM data
-                                        storages
-                                        using
-                                        Pandas library for Python along with Matplotlib and Seaborn for data
-                                        visualization and presentation.
-                                    </p>
-                                    <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                Python
-                                            </div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                SQL
-                                            </div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                Snowflake
-                                            </div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                Tableau
-                                            </div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                Salesforce
-                                            </div>
-                                        </li>
-                                    </ul>
+
+                <!-- Experience Content -->
+                <section id="experience-content" class="hidden">
+                    <div class="space-y-12">
+                        <ol class="group/list">
+                            <li class="mb-3">
+                                <div class="group relative p-6 rounded-lg transition-all hover:bg-stone-200 cursor-pointer"
+                                    data-url="https://www.embarkwithus.com">
+                                    <div class="flex flex-col lg:flex-row lg:gap-8">
+                                        <header
+                                            class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
+                                            June 2024 - Jan 2025
+                                        </header>
+
+                                        <div class="lg:w-2/3">
+                                            <h3 class="font-medium leading-snug text-black">
+                                                <a class="text-black inline-flex items-baseline font-medium leading-tight hover:text-blue-600 focus-visible:text-black group/link text-base"
+                                                    href="https://www.embarkwithus.com" target="_blank"
+                                                    rel="noreferrer noopener" aria-label="Data Science Intern (Embark)">
+                                                    <span>Data Science Intern - Embark
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor"
+                                                            class="inline-block h-4 w-4 shrink-0 ml-1"
+                                                            aria-hidden="true">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </h3>
+                                            <p class="mt-2 text-sm leading-normal">
+                                                Supported data operations for the growth team by conducting exploratory
+                                                data
+                                                analysis and statistical analysis on various project metrics (e.g,
+                                                revenue
+                                                generated, hours billed, consultants assigned) to support optimal
+                                                pricing
+                                                strategy decisions.
+                                                Cleaned, updated, and verified data accuracy across various CRM data
+                                                storages
+                                                using
+                                                Pandas library for Python along with Matplotlib and Seaborn for data
+                                                visualization and presentation.
+                                            </p>
+                                            <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        Python
+                                                    </div>
+                                                </li>
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        SQL
+                                                    </div>
+                                                </li>
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        Snowflake
+                                                    </div>
+                                                </li>
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        Tableau
+                                                    </div>
+                                                </li>
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        Salesforce
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
                     </div>
                 </section>
 
                 <!-- Portfolio Content -->
-                <section id="portfolio_content">
+                <section id="portfolio-content">
                     <div class="space-y-12">
                         <ol class="group/list">
                             <li class="mb-3">
-                                <div class="group relative p-6 rounded-lg transition-all hover:bg-stone-200">
+                                <div class="group relative p-6 rounded-lg transition-all hover:bg-stone-200 cursor-pointer"
+                                    data-url="https://zunzun08.github.io/Portfolio/2025/06/10/portfolio-website-blog">
                                     <div class="flex flex-col lg:flex-row lg:gap-8">
                                         <header
                                             class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
@@ -340,7 +351,8 @@
 
                             <!-- Add more portfolio items here to see scrolling effect -->
                             <li class="mb-12">
-                                <div class="group relative p-6 rounded-lg transition-all hover:bg-stone-200">
+                                <div class="group relative p-6 rounded-lg transition-all cursor-pointer hover:bg-stone-200"
+                                    data-url="">
                                     <div class="flex flex-col lg:flex-row lg:gap-8">
                                         <header
                                             class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
@@ -434,86 +446,97 @@
 
                 <section id="blog-content">
                     <div class="space-y-12">
-                        <div class="group relative p-6 rounded-lg transition-all hover:bg-stone-200">
-                            <div class="flex flex-col lg:flex-row lg:gap-8">
-                                <header class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
-                                    Jan 2025 - May 2025
-                                </header>
-                                <div class="lg:w-2/3">
-                                    <h3 class="font-medium leading-snug text-black">
-                                        <a class="text-black inline-flex items-baseline font-medium leading-tight hover:text-blue-600 focus-visible:text-black group/link text-base"
-                                            href="docs/Blog/Sampling/2025/05/28/sampling" target="_blank"
-                                            rel="noreferrer noopener" aria-label="Website Update Links">
-                                            <span>Sampling and the Overlap Measure
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                    fill="currentColor" class="inline-block h-4 w-4 shrink-0 ml-1"
-                                                    aria-hidden="true">
-                                                    <path fill-rule="evenodd"
-                                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </h3>
-                                    <p class="mt-2 text-sm leading-normal">
-                                        A detailed look into different sampling algorithms designed to build
-                                        intuition
-                                        over the
-                                        idea
-                                        of
-                                        distributional similarity. The measure of distributional similarity that's
-                                        built
-                                        up to
-                                        in
-                                        this
-                                        deep dive is the Overlap measure. The overlap measure tells us given two
-                                        individuals
-                                        drawn
-                                        from
-                                        distinct distributions, how likely is it that we can replace one with the
-                                        other?
-                                        The
-                                        order
-                                        in
-                                        which we arrive at these ideas is sequential and we observe that regardless
-                                        of
-                                        its
-                                        complexity,
-                                        sampling algorithms have to use some measure of distributional similarity to
-                                        work.
-                                    </p>
-                                    <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                Bayesian Statistics
-                                            </div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                Python
-                                            </div>
-                                        </li>
-                                        <li class="mr-1.5 mt-2">
-                                            <div
-                                                class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
-                                                Data Visualization
-                                            </div>
-                                        </li>
-                                    </ul>
+                        <ol class="group/list">
+                            <li class="mb-3">
+                                <div class="group relative p-6 rounded-lg transition-all hover:bg-stone-200 cursor-pointer"
+                                    data-url="https://zunzun08.github.io/docs/Blog/Sampling/2025/05/28/sampling">
+                                    <div class="flex flex-col lg:flex-row lg:gap-8">
+                                        <header
+                                            class="text-xs font-semibold uppercase tracking-wide text-slate-500 lg:w-1/3">
+                                            Jan 2025 - May 2025
+                                        </header>
+                                        <div class="lg:w-2/3">
+                                            <h3 class="font-medium leading-snug text-black">
+                                                <a class="text-black inline-flex items-baseline font-medium leading-tight hover:text-blue-600 focus-visible:text-black group/link text-base"
+                                                    href="docs/Blog/Sampling/2025/05/28/sampling" target="_blank"
+                                                    rel="noreferrer noopener" aria-label="Website Update Links">
+                                                    <span>Sampling and the Overlap Measure
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                            fill="currentColor"
+                                                            class="inline-block h-4 w-4 shrink-0 ml-1"
+                                                            aria-hidden="true">
+                                                            <path fill-rule="evenodd"
+                                                                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </h3>
+                                            <p class="mt-2 text-sm leading-normal">
+                                                A detailed look into different sampling algorithms designed to build
+                                                intuition
+                                                over the
+                                                idea
+                                                of
+                                                distributional similarity. The measure of distributional similarity
+                                                that's
+                                                built
+                                                up to
+                                                in
+                                                this
+                                                deep dive is the Overlap measure. The overlap measure tells us given two
+                                                individuals
+                                                drawn
+                                                from
+                                                distinct distributions, how likely is it that we can replace one with
+                                                the
+                                                other?
+                                                The
+                                                order
+                                                in
+                                                which we arrive at these ideas is sequential and we observe that
+                                                regardless
+                                                of
+                                                its
+                                                complexity,
+                                                sampling algorithms have to use some measure of distributional
+                                                similarity to
+                                                work.
+                                            </p>
+                                            <ul class="mt-2 flex flex-wrap" aria-label="tech_used">
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        Bayesian Statistics
+                                                    </div>
+                                                </li>
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        Python
+                                                    </div>
+                                                </li>
+                                                <li class="mr-1.5 mt-2">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-blue-200 px-3 py-1 text-xs font-medium leading-5 text-black">
+                                                        Data Visualization
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <!-- <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center"> -->
-                        <!-- <p class="text-gray-500">Add blog items here</p> -->
-                        <!-- </div> -->
+                                <!-- <div class="h-96 bg-gray-100 rounded-lg flex items-center justify-center"> -->
+                                <!-- <p class="text-gray-500">Add blog items here</p> -->
+                                <!-- </div> -->
+                            </li>
+                        </ol>
                     </div>
                 </section>
 
 
-                <div id="about_header">
+                <div id="about-header">
                     <div class="sticky top-0 z-20 mb-4 bg-stone-50 flex border-b border-gray-200 overflow-y-scroll">
                         <h3 class=" justify-center py-4 px-4 text-m font-semibold text-black uppercase tracking-widest">
                             About</h3>
@@ -571,7 +594,9 @@
                         </div>
                     </div>
                 </section>
-            </section>
+            </div>
+        </section>
+    </section>
 
 
 
@@ -580,45 +605,51 @@
 
 
 
-            <script>
-                function setActiveButton(activeButtonId) {
-                    // Reset both buttons to inactive state
-                    document.getElementById('portfolio_button').classList.add('text-gray-500');
-                    document.getElementById('portfolio_button').classList.remove('text-black');
-                    document.getElementById('experience_button').classList.add('text-gray-500');
-                    document.getElementById('experience_button').classList.remove('text-black');
 
-                    // Activate the clicked button
-                    const activeBtn = document.getElementById(activeButtonId);
-                    activeBtn.classList.remove('text-gray-500');
-                    activeBtn.classList.add('text-black');
-                }
+    <script>
+        function setActiveButton(activeButtonId) {
+            // Reset both buttons to inactive state
+            document.getElementById('portfolio-button').classList.add('text-gray-500');
+            document.getElementById('portfolio-button').classList.remove('text-black');
+            document.getElementById('experience-button').classList.add('text-gray-500');
+            document.getElementById('experience-button').classList.remove('text-black');
 
-                function toggleContent(showId, hideId) {
-                    // Toggle content visibility
-                    document.getElementById(showId).classList.remove('hidden');
-                    document.getElementById(hideId).classList.add('hidden');
+            // Activate the clicked button
+            const activeBtn = document.getElementById(activeButtonId);
+            activeBtn.classList.remove('text-gray-500');
+            activeBtn.classList.add('text-black');
+        }
 
-                    // Update button states
-                    setActiveButton(showId === 'portfolio_content' ? 'portfolio_button' : 'experience_button');
-                }
+        function toggleContent(showId, hideId) {
+            // Toggle content visibility
+            document.getElementById(showId).classList.remove('hidden');
+            document.getElementById(hideId).classList.add('hidden');
 
-                document.addEventListener('DOMContentLoaded', function () {
-                    // Initialize with portfolio visible
-                    toggleContent('portfolio_content', 'experience_content');
+            // Update button states
+            setActiveButton(showId === 'portfolio-content' ? 'portfolio-button' : 'experience-button');
+        }
 
-                    // Set up event listeners
-                    document.getElementById('portfolio_button').addEventListener('click', function () {
-                        toggleContent('portfolio_content', 'experience_content');
-                    });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize with portfolio visible
+            toggleContent('portfolio-content', 'experience-content');
 
-                    document.getElementById('experience_button').addEventListener('click', function () {
-                        toggleContent('experience_content', 'portfolio_content');
-                    });
-                });
-            </script>
+            // Set up event listeners
+            document.getElementById('portfolio-button').addEventListener('click', function () {
+                toggleContent('portfolio-content', 'experience-content');
+            });
 
-            <!--
+            document.getElementById('experience-button').addEventListener('click', function () {
+                toggleContent('experience-content', 'portfolio-content');
+            });
+        });
+    </script>
+
+    <!--Getting Active Section-->
+    <script>
+    </script>
+
+
+    <!--
         <script>
              function getPosition(headerId) {
                  document.getElementById('portfolio-exp-header').getBoundingClientRect()
@@ -629,7 +660,6 @@
             }
         </script>
          -->
-
 </body>
 
 </html>
