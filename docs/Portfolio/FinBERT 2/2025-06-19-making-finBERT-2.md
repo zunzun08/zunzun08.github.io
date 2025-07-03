@@ -9,13 +9,13 @@ permalink: /docs/Portfolio/FinBERT_2
 
 # Introduction
 
-I was asked by a friend who has been working on building his expertise in the world of quantitative trading to build a sentiment analysis model to quickly quantify the sentiment of recent, relevant financial news articles of specific publicly traded companies as a component for a portfolio he was looking to build and manage. I agreed and began to build an end to end system that was capable of the following:
+In quantiative finance, speed is everything. The faster news can be processed and identified as good or bad for a trader then faster securities can be moved. To address this need for speed and accuracy, I want to build a sentiment analysis model that quickly quantifies the sentiment of real-time, relevant financial news articles of publicly traded companies. To start, I need a model that achieves the following:
 
 - Injest news articles from major American news sources along with news aggregators for sentiment on general, daily, stock market sentiment
 - Store data obtained from web crawling, model training, and model predictions
 - Store the trained Large Language Model for quick prediction, one off prediction
 
-Here's the system I ultimately developed:
+Ultimately I developed:
 <p align="center">
 <img src="/assets/system_architecture (v1).png">
 </p>
