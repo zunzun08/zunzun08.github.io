@@ -1,8 +1,8 @@
 ---
 layout: default
-title: FinBERT 2
+title: FinBERTFast
 has_children: true
-permalink: /docs/Portfolio/FinBERT_2
+permalink: /docs/Portfolio/FinBERTFast
 ---
 
 
@@ -21,8 +21,3 @@ Ultimately, the system I have in mind should resemble the following:
 </p>
 
 Users of the model, FinBERT 2 should be able to call the model for prediction and should also call the data used to train FinBERT and the previous headlines it has predicted. The construction of the system will be seperated into three parts including:
-
-(WIP)
-[Scraper Development]
-(WIP)
-[Database and pipeline Development]

@@ -1,8 +1,9 @@
 ---
 layout: default
-title: FinBERT 2 - Model Building
-permalink: /docs/Portfolio/FinBERT_2/model_building
-parent: FinBERT 2
+title: FinBERTFast - Model Building
+permalink: /docs/Portfolio/FinBERTFast/model_building
+parent: FinBERTFast
+order: 1
 ---
 
 
